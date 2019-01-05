@@ -1,0 +1,1875 @@
+﻿flight is better, fixed skybox fog
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Tue Jul 4 14:20:08 2017 -0400
+#
+# On branch better_terrain
+# Changes to be committed:
+#	deleted:    Assets/3rdPersonCamera.meta
+#	deleted:    Assets/3rdPersonCamera/Ball - DemoScene.unity
+#	deleted:    Assets/3rdPersonCamera/Ball - DemoScene.unity.meta
+#	deleted:    Assets/3rdPersonCamera/DarkSoulCamera - DemoScene.unity
+#	deleted:    Assets/3rdPersonCamera/DarkSoulCamera - DemoScene.unity.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Materials.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Materials/grid.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Materials/grid.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/BallController.cs
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/BallController.cs.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/CaretFix.cs
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/CaretFix.cs.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/Reset.cs
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/Reset.cs.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/SceneLoader.cs
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/SceneLoader.cs.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/UIHandling.cs
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Scripts/UIHandling.cs.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/BlockPrototype04x04x04.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/BlockPrototype04x04x04.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/JoinInnerPrototype01x06x01.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/JoinInnerPrototype01x06x01.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/Materials.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/Materials/NavyGrid.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/Materials/NavyGrid.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/PlatformPrototype02x01x02.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/PlatformPrototype02x01x02.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/RampPrototype04x02x02.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/RampPrototype04x02x02.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/StepsPrototype04x02x02.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Standard Assets/Prototyping/Models/StepsPrototype04x02x02.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Terrain.asset
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Terrain.asset.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Floor.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Floor.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Skybox.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Skybox.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Terrain.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Terrain.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Wall.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/Wall.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/grid.png
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/grid.png.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/terrainTex.png
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/Textures/terrainTex.png.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels/Materials.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels/Materials/No Name.mat
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels/Materials/No Name.mat.meta
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels/pyramid.fbx
+#	deleted:    Assets/3rdPersonCamera/DemoSceneDependencies/demoModels/pyramid.fbx.meta
+#	deleted:    Assets/3rdPersonCamera/Documentation.meta
+#	deleted:    Assets/3rdPersonCamera/Documentation/documentation.html
+#	deleted:    Assets/3rdPersonCamera/Documentation/documentation.html.meta
+#	deleted:    Assets/3rdPersonCamera/Documentation/readme.txt
+#	deleted:    Assets/3rdPersonCamera/Documentation/readme.txt.meta
+#	deleted:    Assets/3rdPersonCamera/FollowCamera - DemoScene.unity
+#	deleted:    Assets/3rdPersonCamera/FollowCamera - DemoScene.unity.meta
+#	deleted:    Assets/3rdPersonCamera/FreeFormCamera - DemoScene.unity
+#	deleted:    Assets/3rdPersonCamera/FreeFormCamera - DemoScene.unity.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Basic.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Basic.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Follow.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Follow.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_FreeForm.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_FreeForm.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_FreeFormAndTargeting.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_FreeFormAndTargeting.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Ultimate.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/3rdPersonCamera_Ultimate.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/Prefabs/Player.prefab
+#	deleted:    Assets/3rdPersonCamera/Prefabs/Player.prefab.meta
+#	deleted:    Assets/3rdPersonCamera/ProjectSettings.meta
+#	deleted:    Assets/3rdPersonCamera/ProjectSettings/InputManager.asset
+#	deleted:    Assets/3rdPersonCamera/ProjectSettings/InputManager.asset.meta
+#	deleted:    Assets/3rdPersonCamera/SceneLoader.unity
+#	deleted:    Assets/3rdPersonCamera/SceneLoader.unity.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/CameraController.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/CameraController.cs.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/DisableFollow.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/DisableFollow.cs.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/Follow.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/Follow.cs.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/FreeForm.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/FreeForm.cs.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/LockOnTarget.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/LockOnTarget.cs.meta
+#	deleted:    Assets/3rdPersonCamera/Scripts/Targetable.cs
+#	deleted:    Assets/3rdPersonCamera/Scripts/Targetable.cs.meta
+#	modified:   Assets/Bird Player.prefab
+#	deleted:    Assets/Classic Skybox.meta
+#	deleted:    Assets/Classic Skybox/01.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_BK.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_DN.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_FR.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_LF.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_RT.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/01/sky1_UP.jpg
+#	deleted:    Assets/Classic Skybox/01/sky1_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/02.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_BK.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_DN.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_FR.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_LF.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_RT.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/02/sky2_UP.jpg
+#	deleted:    Assets/Classic Skybox/02/sky2_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/03.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_BK.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_DN.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_FR.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_LF.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_RT.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/03/sky3_UP.jpg
+#	deleted:    Assets/Classic Skybox/03/sky3_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/04.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_BK.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_DN.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_FR.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_LF.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_RT.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/04/sky4_UP.jpg
+#	deleted:    Assets/Classic Skybox/04/sky4_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/05.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_BK.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_DN.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_FR.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_LF.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_RT.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/05/sky5_UP.jpg
+#	deleted:    Assets/Classic Skybox/05/sky5_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/06.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_BK.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_DN.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_FR.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_LF.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_RT.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/06/sky6_UP.jpg
+#	deleted:    Assets/Classic Skybox/06/sky6_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/07.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_BK.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_DN.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_FR.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_LF.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_RT.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/07/sky7_UP.jpg
+#	deleted:    Assets/Classic Skybox/07/sky7_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/08.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_BK.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_DN.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_FR.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_LF.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_RT.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/08/sky8_UP.jpg
+#	deleted:    Assets/Classic Skybox/08/sky8_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/09.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_BK.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_DN.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_FR.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_LF.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_RT.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/09/sky9_UP.jpg
+#	deleted:    Assets/Classic Skybox/09/sky9_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/10.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_BK.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_DN.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_FR.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_LF.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_RT.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/10/sky10_UP.jpg
+#	deleted:    Assets/Classic Skybox/10/sky10_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/11.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_BK.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_DN.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_FR.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_LF.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_RT.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/11/sky11_UP.jpg
+#	deleted:    Assets/Classic Skybox/11/sky11_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/12.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_BK.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_DN.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_FR.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_LF.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_RT.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/12/sky12_UP.jpg
+#	deleted:    Assets/Classic Skybox/12/sky12_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/13.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_BK.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_DN.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_FR.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_LF.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_RT.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/13/sky13_UP.jpg
+#	deleted:    Assets/Classic Skybox/13/sky13_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/14.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_BK.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_DN.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_FR.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_LF.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_RT.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/14/sky14_UP.jpg
+#	deleted:    Assets/Classic Skybox/14/sky14_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/15.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_BK.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_BK.jpg.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_DN.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_DN.jpg.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_FR.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_FR.jpg.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_LF.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_LF.jpg.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_RT.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_RT.jpg.meta
+#	deleted:    Assets/Classic Skybox/15/sky15_UP.jpg
+#	deleted:    Assets/Classic Skybox/15/sky15_UP.jpg.meta
+#	deleted:    Assets/Classic Skybox/sky01.mat
+#	deleted:    Assets/Classic Skybox/sky01.mat.meta
+#	deleted:    Assets/Classic Skybox/sky02.mat
+#	deleted:    Assets/Classic Skybox/sky02.mat.meta
+#	deleted:    Assets/Classic Skybox/sky03.mat
+#	deleted:    Assets/Classic Skybox/sky03.mat.meta
+#	deleted:    Assets/Classic Skybox/sky04.mat
+#	deleted:    Assets/Classic Skybox/sky04.mat.meta
+#	deleted:    Assets/Classic Skybox/sky05.mat
+#	deleted:    Assets/Classic Skybox/sky05.mat.meta
+#	deleted:    Assets/Classic Skybox/sky06.mat
+#	deleted:    Assets/Classic Skybox/sky06.mat.meta
+#	deleted:    Assets/Classic Skybox/sky07.mat
+#	deleted:    Assets/Classic Skybox/sky07.mat.meta
+#	deleted:    Assets/Classic Skybox/sky08.mat
+#	deleted:    Assets/Classic Skybox/sky08.mat.meta
+#	deleted:    Assets/Classic Skybox/sky09.mat
+#	deleted:    Assets/Classic Skybox/sky09.mat.meta
+#	deleted:    Assets/Classic Skybox/sky10.mat
+#	deleted:    Assets/Classic Skybox/sky10.mat.meta
+#	deleted:    Assets/Classic Skybox/sky11.mat
+#	deleted:    Assets/Classic Skybox/sky11.mat.meta
+#	deleted:    Assets/Classic Skybox/sky12.mat
+#	deleted:    Assets/Classic Skybox/sky12.mat.meta
+#	deleted:    Assets/Classic Skybox/sky13.mat
+#	deleted:    Assets/Classic Skybox/sky13.mat.meta
+#	deleted:    Assets/Classic Skybox/sky14.mat
+#	deleted:    Assets/Classic Skybox/sky14.mat.meta
+#	deleted:    Assets/Classic Skybox/sky15.mat
+#	deleted:    Assets/Classic Skybox/sky15.mat.meta
+#	new file:   Assets/Editor/CheckForStandardAssets.cs
+#	new file:   Assets/Editor/CheckForStandardAssets.cs.meta
+#	new file:   Assets/EffectExamples.meta
+#	new file:   Assets/EffectExamples/Blood.meta
+#	new file:   Assets/EffectExamples/Blood/Materials.meta
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodPoolParticle.mat.meta
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodSplashParticle.mat.meta
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodSplatParticle.mat.meta
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat
+#	new file:   Assets/EffectExamples/Blood/Materials/BloodStreamParticle.mat.meta
+#	new file:   Assets/EffectExamples/Blood/Prefabs.meta
+#	new file:   Assets/EffectExamples/Blood/Prefabs/BloodSprayEffect.prefab
+#	new file:   Assets/EffectExamples/Blood/Prefabs/BloodSprayEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Blood/Prefabs/BloodStreamEffect.prefab
+#	new file:   Assets/EffectExamples/Blood/Prefabs/BloodStreamEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Blood/Textures.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodDropAlbedo.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodDropAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodDropNormals.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodDropNormals.tif.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodPoolAlbedo.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodPoolAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodPoolNormals.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodPoolNormals.tif.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodSprayNormals.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodSprayNormals.tif.meta
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodStreamAlbedo.tif
+#	new file:   Assets/EffectExamples/Blood/Textures/BloodStreamAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/DebrisParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/DebrisParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/EmbersParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/EmbersParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/FlameParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/FlameParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/FlameRoundYellowParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/FlameRoundYellowParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/IgnitionFlameParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/IgnitionFlameParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/LightningParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/LightningParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/PlasmaExplosionParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/PlasmaExplosionParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/PlasmaFireParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/PlasmaFireParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/ShockWaveParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/ShockWaveParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/SmokeDarkParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/SmokeDarkParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/SmokeLightParticle.mat
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Materials/SmokeLightParticle.mat.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/BigExplosionEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/BigExplosionEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/DrippingFlames.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/DrippingFlames.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlameThrowerEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlameThrowerEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlamesEffects.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlamesEffects.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlamesParticleEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/FlamesParticleEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/PlasmaExplosionEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/PlasmaExplosionEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/SmallExplosionEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/SmallExplosionEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/SmokeEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/SmokeEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/TorchEffect.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/TorchEffect.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/WallFlames.prefab
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Prefabs/WallFlames.prefab.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/DebrisParticleSheet.png
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/DebrisParticleSheet.png.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameParticleSheet.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameParticleSheet.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameRoundGreyParticleSheet.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameRoundGreyParticleSheet.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameRoundParticleSheet.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/FlameRoundParticleSheet.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/LightningParticle.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/LightningParticle.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/RoundSoftParticle.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/RoundSoftParticle.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuff02ParticleSheet.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuff02ParticleSheet.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuffNormalSheet.tif
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuffNormalSheet.tif.meta
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuffParticleSheet.png
+#	new file:   Assets/EffectExamples/FireExplosionEffects/Textures/SmokePuffParticleSheet.png.meta
+#	new file:   Assets/EffectExamples/Misc Effects.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Materials.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/DustMoteParticle.mat
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/DustMoteParticle.mat.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/SandSwirlsParticle.mat
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/SandSwirlsParticle.mat.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/Spark2Particle.mat
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/Spark2Particle.mat.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/SparkParticle.mat
+#	new file:   Assets/EffectExamples/Misc Effects/Materials/SparkParticle.mat.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/DustMotesEffect.prefab
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/DustMotesEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/ElectricalSparksEffect.prefab
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/ElectricalSparksEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/SandSwirlsEffect.prefab
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/SandSwirlsEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/SparksEffect.prefab
+#	new file:   Assets/EffectExamples/Misc Effects/Prefabs/SparksEffect.prefab.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Textures.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Textures/DustMoteParticle.png
+#	new file:   Assets/EffectExamples/Misc Effects/Textures/DustMoteParticle.png.meta
+#	new file:   Assets/EffectExamples/Misc Effects/Textures/SparkParticle.tif
+#	new file:   Assets/EffectExamples/Misc Effects/Textures/SparkParticle.tif.meta
+#	new file:   Assets/EffectExamples/Profiles.meta
+#	new file:   Assets/EffectExamples/Profiles/EffectsProfile.asset
+#	new file:   Assets/EffectExamples/Profiles/EffectsProfile.asset.meta
+#	new file:   Assets/EffectExamples/Scenes.meta
+#	new file:   Assets/EffectExamples/Scenes/Menu.meta
+#	new file:   Assets/EffectExamples/Scenes/Menu.unity
+#	new file:   Assets/EffectExamples/Scenes/Menu.unity.meta
+#	new file:   Assets/EffectExamples/Scenes/Menu/LightingData.asset
+#	new file:   Assets/EffectExamples/Scenes/Menu/LightingData.asset.meta
+#	new file:   Assets/EffectExamples/Scenes/Menu/ReflectionProbe-0.exr
+#	new file:   Assets/EffectExamples/Scenes/Menu/ReflectionProbe-0.exr.meta
+#	new file:   Assets/EffectExamples/Scenes/Menu/ReflectionProbe-1.exr
+#	new file:   Assets/EffectExamples/Scenes/Menu/ReflectionProbe-1.exr.meta
+#	new file:   Assets/EffectExamples/Shared.meta
+#	new file:   Assets/EffectExamples/Shared/Animation.meta
+#	new file:   Assets/EffectExamples/Shared/Animation/Animations.meta
+#	new file:   Assets/EffectExamples/Shared/Animation/Animations/GunFire.anim
+#	new file:   Assets/EffectExamples/Shared/Animation/Animations/GunFire.anim.meta
+#	new file:   Assets/EffectExamples/Shared/Animation/Animations/GunIdle.anim
+#	new file:   Assets/EffectExamples/Shared/Animation/Animations/GunIdle.anim.meta
+#	new file:   Assets/EffectExamples/Shared/Animation/Controllers.meta
+#	new file:   Assets/EffectExamples/Shared/Animation/Controllers/Gun.controller
+#	new file:   Assets/EffectExamples/Shared/Animation/Controllers/Gun.controller.meta
+#	new file:   Assets/EffectExamples/Shared/Fonts.meta
+#	new file:   Assets/EffectExamples/Shared/Fonts/Roboto-Thin.ttf
+#	new file:   Assets/EffectExamples/Shared/Fonts/Roboto-Thin.ttf.meta
+#	new file:   Assets/EffectExamples/Shared/Fonts/RobotoCondensed-Bold.ttf
+#	new file:   Assets/EffectExamples/Shared/Fonts/RobotoCondensed-Bold.ttf.meta
+#	new file:   Assets/EffectExamples/Shared/Materials.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/Background.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/Background.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/DarkDefault.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/DarkDefault.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/FleshSurface.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/FleshSurface.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/MetalSurface.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/MetalSurface.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/SandSurface.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/SandSurface.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/Skybox.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/Skybox.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/StoneSurface.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/StoneSurface.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Materials/WoodSurface.mat
+#	new file:   Assets/EffectExamples/Shared/Materials/WoodSurface.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Models.meta
+#	new file:   Assets/EffectExamples/Shared/Models/BackGround.FBX
+#	new file:   Assets/EffectExamples/Shared/Models/BackGround.FBX.meta
+#	new file:   Assets/EffectExamples/Shared/Models/FPSWeapon.fbx
+#	new file:   Assets/EffectExamples/Shared/Models/FPSWeapon.fbx.meta
+#	new file:   Assets/EffectExamples/Shared/Models/LowMan.fbx
+#	new file:   Assets/EffectExamples/Shared/Models/LowMan.fbx.meta
+#	new file:   Assets/EffectExamples/Shared/Models/Materials.meta
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/MazeLowMan.mat
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/MazeLowMan.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/No Name.mat
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/No Name.mat.meta
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/ShooterFPSWeapon.mat
+#	new file:   Assets/EffectExamples/Shared/Models/Materials/ShooterFPSWeapon.mat.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Character.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Character.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Meat.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Meat.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Metal.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Metal.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Sand.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Sand.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Stone.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Stone.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/WaterFilled.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/WaterFilled.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Wood.physicMaterial
+#	new file:   Assets/EffectExamples/Shared/PhysicsMaterials/Wood.physicMaterial.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Flesh.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Flesh.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Metal.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Metal.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/ParticlesLight.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/ParticlesLight.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Sand.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Sand.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Stone.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Stone.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/WaterFilled.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/WaterFilled.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Wood.prefab
+#	new file:   Assets/EffectExamples/Shared/Prefabs/Wood.prefab.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts/DecalDestroyer.cs
+#	new file:   Assets/EffectExamples/Shared/Scripts/DecalDestroyer.cs.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts/GunAim.cs
+#	new file:   Assets/EffectExamples/Shared/Scripts/GunAim.cs.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts/GunShoot.cs
+#	new file:   Assets/EffectExamples/Shared/Scripts/GunShoot.cs.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts/ParticleExamples.cs
+#	new file:   Assets/EffectExamples/Shared/Scripts/ParticleExamples.cs.meta
+#	new file:   Assets/EffectExamples/Shared/Scripts/ParticleMenu.cs
+#	new file:   Assets/EffectExamples/Shared/Scripts/ParticleMenu.cs.meta
+#	new file:   Assets/EffectExamples/Shared/Shaders.meta
+#	new file:   Assets/EffectExamples/Shared/Shaders/SurfaceShader_VC.shader
+#	new file:   Assets/EffectExamples/Shared/Shaders/SurfaceShader_VC.shader.meta
+#	new file:   Assets/EffectExamples/Shared/Sprites.meta
+#	new file:   Assets/EffectExamples/Shared/Sprites/UnityLogoSprite.tif
+#	new file:   Assets/EffectExamples/Shared/Sprites/UnityLogoSprite.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/BackgroundAlbedo.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/BackgroundAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsAlpha.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsAlpha.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsNormals.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsNormals.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsOcclusion.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/CloudsOcclusion.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/DustPuffSmallParticleSheet.png
+#	new file:   Assets/EffectExamples/Shared/Textures/DustPuffSmallParticleSheet.png.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/StoneAlbedo.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/StoneAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/StoneNormals.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/StoneNormals.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/WoodAlbedo.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/WoodAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/WoodNormals.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/WoodNormals.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/fleshNormals.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/fleshNormals.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_a.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_a.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_n.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_n.tif.meta
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_o.tif
+#	new file:   Assets/EffectExamples/Shared/Textures/wood_tiled_02_o.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/ImpactSplashParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/ImpactSplashParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/StormCloudParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/StormCloudParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterDropParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterDropParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterMistParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterMistParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterRipplesParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterRipplesParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterTrailParticle.mat
+#	new file:   Assets/EffectExamples/WaterEffects/Materials/WaterTrailParticle.mat.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Models.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Models/ImpactSplash.FBX
+#	new file:   Assets/EffectExamples/WaterEffects/Models/ImpactSplash.FBX.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Models/WaterFaucet.FBX
+#	new file:   Assets/EffectExamples/WaterEffects/Models/WaterFaucet.FBX.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/RainEffect.prefab
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/RainEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/StormCloudEffect.prefab
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/StormCloudEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterDripEffect.prefab
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterDripEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterfallEffect.prefab
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterfallEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterfallSmallEffect.prefab
+#	new file:   Assets/EffectExamples/WaterEffects/Prefabs/WaterfallSmallEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/CloudsParticleNormals.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/CloudsParticleNormals.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/CloudsParticleSheet.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/CloudsParticleSheet.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/ImpactSplashParticle.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/ImpactSplashParticle.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterDropParticle.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterDropParticle.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterMistParticle.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterMistParticle.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterRipplesParticle.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterRipplesParticle.tif.meta
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterTrailParticle.tif
+#	new file:   Assets/EffectExamples/WaterEffects/Textures/WaterTrailParticle.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalMetal.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalMetal.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalStone.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalStone.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalWood.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletDecalWood.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletFleshDecal.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/BulletFleshDecal.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/DustPuffParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/DustPuffParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/MuzzleFlashParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/MuzzleFlashParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/Projectile.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/Projectile.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/RocketTrailParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/RocketTrailParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/ShallCasing.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/ShallCasing.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/TinyStonesParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/TinyStonesParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/WaterStreamParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/WaterStreamParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/WoodSplintersParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Materials/WoodSplintersParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Models.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/Materials.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/Materials/No Name.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/Materials/No Name.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/RocketWarhead.FBX
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/RocketWarhead.FBX.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/ShellCasing.FBX
+#	new file:   Assets/EffectExamples/WeaponEffects/Models/ShellCasing.FBX.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactFleshBigEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactFleshBigEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactFleshSmallEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactFleshSmallEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactMetalEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactMetalEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactSandEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactSandEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactStoneEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactStoneEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactWaterContainerEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactWaterContainerEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactWoodEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/BulletImpactWoodEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/CartridgeEjectEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/CartridgeEjectEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/RocketTrailEffect.prefab
+#	new file:   Assets/EffectExamples/WeaponEffects/Prefabs/RocketTrailEffect.prefab.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodMist.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodMist.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodSplat2.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodSplat2.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodSprayAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodSprayAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreak.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreak.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreakAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreakAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreakNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BloodStreakNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleMetalThroughAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleMetalThroughAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleMetalThroughNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleMetalThroughNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockHeight.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockHeight.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/BulletHoleRockNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FlashParticle.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FlashParticle.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleHeight.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleHeight.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/FleshBulletHoleNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/StreamNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/StreamNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/TinyStonesNormalsSheet.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/TinyStonesNormalsSheet.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/TinyStonesParticleSheet.png
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/TinyStonesParticleSheet.png.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WaterDropsParticle.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WaterDropsParticle.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WaterSplashParticle.mat
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WaterSplashParticle.mat.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleDepth.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleDepth.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/WoodBulletHoleNormals.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/woodSplintersAlbedo.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/woodSplintersAlbedo.tif.meta
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/woodSplintersNormals.tif
+#	new file:   Assets/EffectExamples/WeaponEffects/Textures/woodSplintersNormals.tif.meta
+#	new file:   Assets/Example Scene.unity
+#	new file:   Assets/Example Scene.unity.meta
+#	modified:   Assets/GlideV2.cs
+#	new file:   Assets/HolyShift.meta
+#	new file:   Assets/HolyShift/Materials.meta
+#	new file:   Assets/HolyShift/Materials/LowPolyBase.mat
+#	new file:   Assets/HolyShift/Materials/LowPolyBase.mat.meta
+#	new file:   Assets/HolyShift/Materials/LowPolyDark.mat
+#	new file:   Assets/HolyShift/Materials/LowPolyDark.mat.meta
+#	new file:   Assets/HolyShift/Materials/LowPolyWater.mat
+#	new file:   Assets/HolyShift/Materials/LowPolyWater.mat.meta
+#	new file:   Assets/HolyShift/Materials/LowPolyWaterLowQuality.mat
+#	new file:   Assets/HolyShift/Materials/LowPolyWaterLowQuality.mat.meta
+#	new file:   Assets/HolyShift/Meshes.meta
+#	new file:   Assets/HolyShift/Meshes/GroundRollingStone.fbx
+#	new file:   Assets/HolyShift/Meshes/GroundRollingStone.fbx.meta
+#	new file:   Assets/HolyShift/Meshes/Materials.meta
+#	new file:   Assets/HolyShift/Meshes/Materials/Rock.018.mat
+#	new file:   Assets/HolyShift/Meshes/Materials/Rock.018.mat.meta
+#	new file:   Assets/HolyShift/Meshes/Materials/snow.003.mat
+#	new file:   Assets/HolyShift/Meshes/Materials/snow.003.mat.meta
+#	new file:   Assets/HolyShift/Meshes/Mountain1.fbx
+#	new file:   Assets/HolyShift/Meshes/Mountain1.fbx.meta
+#	new file:   Assets/HolyShift/Prefabs.meta
+#	new file:   Assets/HolyShift/Prefabs/Water.prefab
+#	new file:   Assets/HolyShift/Prefabs/Water.prefab.meta
+#	new file:   Assets/HolyShift/Scenes.meta
+#	new file:   Assets/HolyShift/Scenes/WaterSampleScene.unity
+#	new file:   Assets/HolyShift/Scenes/WaterSampleScene.unity.meta
+#	new file:   Assets/HolyShift/Scripts.meta
+#	new file:   Assets/HolyShift/Shaders.meta
+#	new file:   Assets/HolyShift/Shaders/FXWaterLowpoly.shader
+#	new file:   Assets/HolyShift/Shaders/FXWaterLowpoly.shader.meta
+#	new file:   Assets/HolyShift/Shaders/FXWaterLowpolyLowQuality.shader
+#	new file:   Assets/HolyShift/Shaders/FXWaterLowpolyLowQuality.shader.meta
+#	new file:   Assets/HolyShift/Shaders/WaterInclude.cginc
+#	new file:   Assets/HolyShift/Shaders/WaterInclude.cginc.meta
+#	new file:   Assets/HolyShift/Textures.meta
+#	new file:   Assets/HolyShift/Textures/Distortion.png
+#	new file:   Assets/HolyShift/Textures/Distortion.png.meta
+#	new file:   Assets/HolyShift/Textures/LowPolyBase.png
+#	new file:   Assets/HolyShift/Textures/LowPolyBase.png.meta
+#	new file:   Assets/HolyShift/readme.txt
+#	new file:   Assets/HolyShift/readme.txt.meta
+#	new file:   Assets/Materials/Brown Stony Light.mat
+#	new file:   Assets/Materials/Brown Stony Light.mat.meta
+#	new file:   Assets/Materials/Brown Stony.mat
+#	new file:   Assets/Materials/Brown Stony.mat.meta
+#	new file:   Assets/Materials/Grass.mat
+#	new file:   Assets/Materials/Grass.mat.meta
+#	new file:   Assets/Materials/Grey Stones.mat
+#	new file:   Assets/Materials/Grey Stones.mat.meta
+#	new file:   Assets/Materials/Ice blue.mat
+#	new file:   Assets/Materials/Ice blue.mat.meta
+#	new file:   Assets/Materials/Sandy Orange.mat
+#	new file:   Assets/Materials/Sandy Orange.mat.meta
+#	new file:   Assets/Materials/Sandy.mat
+#	new file:   Assets/Materials/Sandy.mat.meta
+#	new file:   Assets/Materials/Water Deep Blue.mat
+#	new file:   Assets/Materials/Water Deep Blue.mat.meta
+#	new file:   Assets/Materials/Water Light Blue.mat
+#	new file:   Assets/Materials/Water Light Blue.mat.meta
+#	new file:   Assets/Materials/dirt stones eary yellow.mat
+#	new file:   Assets/Materials/dirt stones eary yellow.mat.meta
+#	new file:   Assets/Materials/dirt stones leafs more.mat
+#	new file:   Assets/Materials/dirt stones leafs more.mat.meta
+#	new file:   Assets/Materials/dirt stones leafs.mat
+#	new file:   Assets/Materials/dirt stones leafs.mat.meta
+#	new file:   Assets/Materials/dirt stones.mat
+#	new file:   Assets/Materials/dirt stones.mat.meta
+#	new file:   Assets/Materials/granit grass.mat
+#	new file:   Assets/Materials/granit grass.mat.meta
+#	new file:   Assets/Materials/grey dirt stones.mat
+#	new file:   Assets/Materials/grey dirt stones.mat.meta
+#	new file:   Assets/Materials/ice.mat
+#	new file:   Assets/Materials/ice.mat.meta
+#	new file:   Assets/Materials/lava.mat
+#	new file:   Assets/Materials/lava.mat.meta
+#	new file:   Assets/Materials/leafs dark.mat
+#	new file:   Assets/Materials/leafs dark.mat.meta
+#	new file:   Assets/Materials/leafs.mat
+#	new file:   Assets/Materials/leafs.mat.meta
+#	new file:   Assets/Materials/sand stones.mat
+#	new file:   Assets/Materials/sand stones.mat.meta
+#	modified:   Assets/Materials/toon_water.mat
+#	modified:   Assets/New Terrain 2.asset
+#	deleted:    Assets/OutlineEffect.meta
+#	deleted:    Assets/OutlineEffect/.vs/OutlineEffect/v15/Browse.VC.db
+#	deleted:    Assets/OutlineEffect/Assets.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/at.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/at.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/at.png
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/at.png.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair.fbx
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair.fbx.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/black_plastic.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/black_plastic.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/brushed_steel.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/brushed_steel.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/chrome.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/chrome.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/skin.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/skin.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/wheel.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/chair/wheel.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/floor.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/floor.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/grey.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/grey.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/logo.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/logo.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/logo.png
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/logo.png.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/sky.mat
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Content/sky.mat.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo.unity
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo.unity.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/LightingData.asset
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/LightingData.asset.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/Lightmap-0_comp_dir.png
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/Lightmap-0_comp_dir.png.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/Lightmap-0_comp_light.exr
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/Lightmap-0_comp_light.exr.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/ReflectionProbe-0.exr
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/ReflectionProbe-0.exr.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/ReflectionProbe-1.exr
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Demo/ReflectionProbe-1.exr.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/OutlineAnimation.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/OutlineAnimation.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Rotate.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Rotate.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Toggle.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Demo/Toggle.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/LinkedSet.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/LinkedSet.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Outline.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Outline.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/OutlineEffect.cs
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/OutlineEffect.cs.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineBufferCullOffShader.shader
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineBufferCullOffShader.shader.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineBufferShader.shader
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineBufferShader.shader.meta
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineShader.shader
+#	deleted:    Assets/OutlineEffect/Assets/OutlineEffect/Resources/OutlineShader.shader.meta
+#	deleted:    Assets/OutlineEffect/Assets/chair_source.blend
+#	deleted:    Assets/OutlineEffect/Assets/chair_source.blend.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/AudioManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/AudioManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ClusterInputManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ClusterInputManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/DynamicsManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/DynamicsManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/EditorBuildSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/EditorBuildSettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/EditorSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/EditorSettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/GraphicsSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/GraphicsSettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/InputManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/InputManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/NavMeshAreas.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/NavMeshAreas.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/NetworkManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/NetworkManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/Physics2DSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/Physics2DSettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ProjectSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ProjectSettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ProjectVersion.txt
+#	deleted:    Assets/OutlineEffect/ProjectSettings/ProjectVersion.txt.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/QualitySettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/QualitySettings.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/TagManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/TagManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/TimeManager.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/TimeManager.asset.meta
+#	deleted:    Assets/OutlineEffect/ProjectSettings/UnityConnectSettings.asset
+#	deleted:    Assets/OutlineEffect/ProjectSettings/UnityConnectSettings.asset.meta
+#	new file:   Assets/PostProcessing.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources.meta -> Assets/PostProcessing/Editor Resources.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors.meta -> Assets/PostProcessing/Editor Resources/Monitors.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute -> Assets/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute.meta -> Assets/PostProcessing/Editor Resources/Monitors/HistogramCompute.compute.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/HistogramRender.shader -> Assets/PostProcessing/Editor Resources/Monitors/HistogramRender.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/HistogramRender.shader.meta -> Assets/PostProcessing/Editor Resources/Monitors/HistogramRender.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/ParadeRender.shader -> Assets/PostProcessing/Editor Resources/Monitors/ParadeRender.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/ParadeRender.shader.meta -> Assets/PostProcessing/Editor Resources/Monitors/ParadeRender.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute -> Assets/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute.meta -> Assets/PostProcessing/Editor Resources/Monitors/VectorscopeCompute.compute.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader -> Assets/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader.meta -> Assets/PostProcessing/Editor Resources/Monitors/VectorscopeRender.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute -> Assets/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute.meta -> Assets/PostProcessing/Editor Resources/Monitors/WaveformCompute.compute.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/WaveformRender.shader -> Assets/PostProcessing/Editor Resources/Monitors/WaveformRender.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/Monitors/WaveformRender.shader.meta -> Assets/PostProcessing/Editor Resources/Monitors/WaveformRender.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI.meta -> Assets/PostProcessing/Editor Resources/UI.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/CurveBackground.shader -> Assets/PostProcessing/Editor Resources/UI/CurveBackground.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/CurveBackground.shader.meta -> Assets/PostProcessing/Editor Resources/UI/CurveBackground.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png -> Assets/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png.meta -> Assets/PostProcessing/Editor Resources/UI/MotionBlendingIcon.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/Trackball.shader -> Assets/PostProcessing/Editor Resources/UI/Trackball.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor Resources/UI/Trackball.shader.meta -> Assets/PostProcessing/Editor Resources/UI/Trackball.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor.meta -> Assets/PostProcessing/Editor.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Attributes.meta -> Assets/PostProcessing/Editor/Attributes.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs -> Assets/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs.meta -> Assets/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models.meta -> Assets/PostProcessing/Editor/Models.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs -> Assets/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/AntialiasingModelEditor.cs -> Assets/PostProcessing/Editor/Models/AntialiasingModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/AntialiasingModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/AntialiasingModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/BloomModelEditor.cs -> Assets/PostProcessing/Editor/Models/BloomModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/BloomModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/BloomModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs -> Assets/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs.meta -> Assets/PostProcessing/Editor/Models/BuiltinDebugViewsEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs -> Assets/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs.meta -> Assets/PostProcessing/Editor/Models/ChromaticAberrationEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ColorGradingModelEditor.cs -> Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ColorGradingModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/ColorGradingModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs -> Assets/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/DefaultPostFxModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs -> Assets/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/DepthOfFieldModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DitheringModelEditor.cs -> Assets/PostProcessing/Editor/Models/DitheringModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/DitheringModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/DitheringModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs -> Assets/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/EyeAdaptationModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/FogModelEditor.cs -> Assets/PostProcessing/Editor/Models/FogModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/FogModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/FogModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/GrainModelEditor.cs -> Assets/PostProcessing/Editor/Models/GrainModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/GrainModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/GrainModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/MotionBlurModelEditor.cs -> Assets/PostProcessing/Editor/Models/MotionBlurModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/MotionBlurModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/MotionBlurModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs -> Assets/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/ScreenSpaceReflectionModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/UserLutModelEditor.cs -> Assets/PostProcessing/Editor/Models/UserLutModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/UserLutModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/UserLutModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/VignetteModelEditor.cs -> Assets/PostProcessing/Editor/Models/VignetteModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Models/VignetteModelEditor.cs.meta -> Assets/PostProcessing/Editor/Models/VignetteModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors.meta -> Assets/PostProcessing/Editor/Monitors.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/HistogramMonitor.cs -> Assets/PostProcessing/Editor/Monitors/HistogramMonitor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/HistogramMonitor.cs.meta -> Assets/PostProcessing/Editor/Monitors/HistogramMonitor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/ParadeMonitor.cs -> Assets/PostProcessing/Editor/Monitors/ParadeMonitor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/ParadeMonitor.cs.meta -> Assets/PostProcessing/Editor/Monitors/ParadeMonitor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs -> Assets/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs.meta -> Assets/PostProcessing/Editor/Monitors/VectorscopeMonitor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/WaveformMonitor.cs -> Assets/PostProcessing/Editor/Monitors/WaveformMonitor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Monitors/WaveformMonitor.cs.meta -> Assets/PostProcessing/Editor/Monitors/WaveformMonitor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingBehaviourEditor.cs -> Assets/PostProcessing/Editor/PostProcessingBehaviourEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingBehaviourEditor.cs.meta -> Assets/PostProcessing/Editor/PostProcessingBehaviourEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingFactory.cs -> Assets/PostProcessing/Editor/PostProcessingFactory.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingFactory.cs.meta -> Assets/PostProcessing/Editor/PostProcessingFactory.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingInspector.cs -> Assets/PostProcessing/Editor/PostProcessingInspector.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingInspector.cs.meta -> Assets/PostProcessing/Editor/PostProcessingInspector.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingModelEditor.cs -> Assets/PostProcessing/Editor/PostProcessingModelEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingModelEditor.cs.meta -> Assets/PostProcessing/Editor/PostProcessingModelEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingMonitor.cs -> Assets/PostProcessing/Editor/PostProcessingMonitor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PostProcessingMonitor.cs.meta -> Assets/PostProcessing/Editor/PostProcessingMonitor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers.meta -> Assets/PostProcessing/Editor/PropertyDrawers.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs -> Assets/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs.meta -> Assets/PostProcessing/Editor/PropertyDrawers/GetSetDrawer.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs -> Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs.meta -> Assets/PostProcessing/Editor/PropertyDrawers/MinDrawer.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs -> Assets/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs.meta -> Assets/PostProcessing/Editor/PropertyDrawers/TrackballGroupDrawer.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils.meta -> Assets/PostProcessing/Editor/Utils.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/CurveEditor.cs -> Assets/PostProcessing/Editor/Utils/CurveEditor.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/CurveEditor.cs.meta -> Assets/PostProcessing/Editor/Utils/CurveEditor.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/EditorGUIHelper.cs -> Assets/PostProcessing/Editor/Utils/EditorGUIHelper.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/EditorGUIHelper.cs.meta -> Assets/PostProcessing/Editor/Utils/EditorGUIHelper.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/EditorResources.cs -> Assets/PostProcessing/Editor/Utils/EditorResources.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/EditorResources.cs.meta -> Assets/PostProcessing/Editor/Utils/EditorResources.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/FxStyles.cs -> Assets/PostProcessing/Editor/Utils/FxStyles.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/FxStyles.cs.meta -> Assets/PostProcessing/Editor/Utils/FxStyles.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/ReflectionUtils.cs -> Assets/PostProcessing/Editor/Utils/ReflectionUtils.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Editor/Utils/ReflectionUtils.cs.meta -> Assets/PostProcessing/Editor/Utils/ReflectionUtils.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources.meta -> Assets/PostProcessing/Resources.meta
+#	new file:   Assets/PostProcessing/Resources/Bluenoise64.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/COPYING.txt -> Assets/PostProcessing/Resources/Bluenoise64/COPYING.txt
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/COPYING.txt.meta -> Assets/PostProcessing/Resources/Bluenoise64/COPYING.txt.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_0.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_1.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_10.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_11.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_12.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_13.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_14.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_15.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_16.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_17.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_18.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_19.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_2.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_20.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_21.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_22.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_23.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_24.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_25.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_26.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_27.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_28.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_29.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_3.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_30.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_31.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_32.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_33.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_34.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_35.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_36.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_37.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_38.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_39.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_4.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_40.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_41.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_42.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_43.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_44.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_45.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_46.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_47.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_48.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_49.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_5.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_50.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_51.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_52.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_53.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_54.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_55.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_56.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_57.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_58.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_59.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_6.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_60.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_61.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_62.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_63.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_7.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_8.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png.meta -> Assets/PostProcessing/Resources/Bluenoise64/LDR_LLL1_9.png.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LICENSE.txt -> Assets/PostProcessing/Resources/Bluenoise64/LICENSE.txt
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64/LICENSE.txt.meta -> Assets/PostProcessing/Resources/Bluenoise64/LICENSE.txt.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders.meta -> Assets/PostProcessing/Resources/Shaders.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ACES.cginc -> Assets/PostProcessing/Resources/Shaders/ACES.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ACES.cginc.meta -> Assets/PostProcessing/Resources/Shaders/ACES.cginc.meta
+#	new file:   Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc.meta -> Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/AmbientOcclusion.shader -> Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/AmbientOcclusion.shader.meta -> Assets/PostProcessing/Resources/Shaders/AmbientOcclusion.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Blit.shader -> Assets/PostProcessing/Resources/Shaders/Blit.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Blit.shader.meta -> Assets/PostProcessing/Resources/Shaders/Blit.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Bloom.cginc -> Assets/PostProcessing/Resources/Shaders/Bloom.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Bloom.cginc.meta -> Assets/PostProcessing/Resources/Shaders/Bloom.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Bloom.shader -> Assets/PostProcessing/Resources/Shaders/Bloom.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Bloom.shader.meta -> Assets/PostProcessing/Resources/Shaders/Bloom.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader -> Assets/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader.meta -> Assets/PostProcessing/Resources/Shaders/BuiltinDebugViews.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ColorGrading.cginc -> Assets/PostProcessing/Resources/Shaders/ColorGrading.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ColorGrading.cginc.meta -> Assets/PostProcessing/Resources/Shaders/ColorGrading.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Common.cginc -> Assets/PostProcessing/Resources/Shaders/Common.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Common.cginc.meta -> Assets/PostProcessing/Resources/Shaders/Common.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DepthOfField.cginc -> Assets/PostProcessing/Resources/Shaders/DepthOfField.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DepthOfField.cginc.meta -> Assets/PostProcessing/Resources/Shaders/DepthOfField.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DepthOfField.shader -> Assets/PostProcessing/Resources/Shaders/DepthOfField.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DepthOfField.shader.meta -> Assets/PostProcessing/Resources/Shaders/DepthOfField.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DiskKernels.cginc -> Assets/PostProcessing/Resources/Shaders/DiskKernels.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/DiskKernels.cginc.meta -> Assets/PostProcessing/Resources/Shaders/DiskKernels.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeAdaptation.cginc -> Assets/PostProcessing/Resources/Shaders/EyeAdaptation.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeAdaptation.cginc.meta -> Assets/PostProcessing/Resources/Shaders/EyeAdaptation.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeAdaptation.shader -> Assets/PostProcessing/Resources/Shaders/EyeAdaptation.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeAdaptation.shader.meta -> Assets/PostProcessing/Resources/Shaders/EyeAdaptation.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeHistogram.compute -> Assets/PostProcessing/Resources/Shaders/EyeHistogram.compute
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/EyeHistogram.compute.meta -> Assets/PostProcessing/Resources/Shaders/EyeHistogram.compute.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/FXAA.shader -> Assets/PostProcessing/Resources/Shaders/FXAA.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/FXAA.shader.meta -> Assets/PostProcessing/Resources/Shaders/FXAA.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/FXAA3.cginc -> Assets/PostProcessing/Resources/Shaders/FXAA3.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/FXAA3.cginc.meta -> Assets/PostProcessing/Resources/Shaders/FXAA3.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Fog.shader -> Assets/PostProcessing/Resources/Shaders/Fog.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Fog.shader.meta -> Assets/PostProcessing/Resources/Shaders/Fog.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/GrainGen.shader -> Assets/PostProcessing/Resources/Shaders/GrainGen.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/GrainGen.shader.meta -> Assets/PostProcessing/Resources/Shaders/GrainGen.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/LutGen.shader -> Assets/PostProcessing/Resources/Shaders/LutGen.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/LutGen.shader.meta -> Assets/PostProcessing/Resources/Shaders/LutGen.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/MotionBlur.cginc -> Assets/PostProcessing/Resources/Shaders/MotionBlur.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/MotionBlur.cginc.meta -> Assets/PostProcessing/Resources/Shaders/MotionBlur.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/MotionBlur.shader -> Assets/PostProcessing/Resources/Shaders/MotionBlur.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/MotionBlur.shader.meta -> Assets/PostProcessing/Resources/Shaders/MotionBlur.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc -> Assets/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc.meta -> Assets/PostProcessing/Resources/Shaders/ScreenSpaceRaytrace.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader -> Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader.meta -> Assets/PostProcessing/Resources/Shaders/ScreenSpaceReflection.shader.meta
+#	new file:   Assets/PostProcessing/Resources/Shaders/TAA.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/TAA.cginc.meta -> Assets/PostProcessing/Resources/Shaders/TAA.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/TAA.shader -> Assets/PostProcessing/Resources/Shaders/TAA.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/TAA.shader.meta -> Assets/PostProcessing/Resources/Shaders/TAA.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Tonemapping.cginc -> Assets/PostProcessing/Resources/Shaders/Tonemapping.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Tonemapping.cginc.meta -> Assets/PostProcessing/Resources/Shaders/Tonemapping.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Uber.shader -> Assets/PostProcessing/Resources/Shaders/Uber.shader
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/Uber.shader.meta -> Assets/PostProcessing/Resources/Shaders/Uber.shader.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/UberSecondPass.cginc -> Assets/PostProcessing/Resources/Shaders/UberSecondPass.cginc
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/UberSecondPass.cginc.meta -> Assets/PostProcessing/Resources/Shaders/UberSecondPass.cginc.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime.meta -> Assets/PostProcessing/Runtime.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes.meta -> Assets/PostProcessing/Runtime/Attributes.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/GetSetAttribute.cs -> Assets/PostProcessing/Runtime/Attributes/GetSetAttribute.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/GetSetAttribute.cs.meta -> Assets/PostProcessing/Runtime/Attributes/GetSetAttribute.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/MinAttribute.cs -> Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/MinAttribute.cs.meta -> Assets/PostProcessing/Runtime/Attributes/MinAttribute.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/TrackballAttribute.cs -> Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/TrackballAttribute.cs.meta -> Assets/PostProcessing/Runtime/Attributes/TrackballAttribute.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs -> Assets/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs.meta -> Assets/PostProcessing/Runtime/Attributes/TrackballGroupAttribute.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components.meta -> Assets/PostProcessing/Runtime/Components.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs -> Assets/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/AmbientOcclusionComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/BloomComponent.cs -> Assets/PostProcessing/Runtime/Components/BloomComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/BloomComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/BloomComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs -> Assets/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/BuiltinDebugViewsComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs -> Assets/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/ChromaticAberrationComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ColorGradingComponent.cs -> Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ColorGradingComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/ColorGradingComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs -> Assets/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/DepthOfFieldComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/DitheringComponent.cs -> Assets/PostProcessing/Runtime/Components/DitheringComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/DitheringComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/DitheringComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs -> Assets/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/EyeAdaptationComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/FogComponent.cs -> Assets/PostProcessing/Runtime/Components/FogComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/FogComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/FogComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/FxaaComponent.cs -> Assets/PostProcessing/Runtime/Components/FxaaComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/FxaaComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/FxaaComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/GrainComponent.cs -> Assets/PostProcessing/Runtime/Components/GrainComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/GrainComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/GrainComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/MotionBlurComponent.cs -> Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/MotionBlurComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/MotionBlurComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs -> Assets/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/ScreenSpaceReflectionComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/TaaComponent.cs -> Assets/PostProcessing/Runtime/Components/TaaComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/TaaComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/TaaComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/UserLutComponent.cs -> Assets/PostProcessing/Runtime/Components/UserLutComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/UserLutComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/UserLutComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/VignetteComponent.cs -> Assets/PostProcessing/Runtime/Components/VignetteComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Components/VignetteComponent.cs.meta -> Assets/PostProcessing/Runtime/Components/VignetteComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models.meta -> Assets/PostProcessing/Runtime/Models.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs -> Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs.meta -> Assets/PostProcessing/Runtime/Models/AmbientOcclusionModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/AntialiasingModel.cs -> Assets/PostProcessing/Runtime/Models/AntialiasingModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/AntialiasingModel.cs.meta -> Assets/PostProcessing/Runtime/Models/AntialiasingModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/BloomModel.cs -> Assets/PostProcessing/Runtime/Models/BloomModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/BloomModel.cs.meta -> Assets/PostProcessing/Runtime/Models/BloomModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs -> Assets/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs.meta -> Assets/PostProcessing/Runtime/Models/BuiltinDebugViewsModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs -> Assets/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs.meta -> Assets/PostProcessing/Runtime/Models/ChromaticAberrationModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ColorGradingModel.cs -> Assets/PostProcessing/Runtime/Models/ColorGradingModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ColorGradingModel.cs.meta -> Assets/PostProcessing/Runtime/Models/ColorGradingModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/DepthOfFieldModel.cs -> Assets/PostProcessing/Runtime/Models/DepthOfFieldModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/DepthOfFieldModel.cs.meta -> Assets/PostProcessing/Runtime/Models/DepthOfFieldModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/DitheringModel.cs -> Assets/PostProcessing/Runtime/Models/DitheringModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/DitheringModel.cs.meta -> Assets/PostProcessing/Runtime/Models/DitheringModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/EyeAdaptationModel.cs -> Assets/PostProcessing/Runtime/Models/EyeAdaptationModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/EyeAdaptationModel.cs.meta -> Assets/PostProcessing/Runtime/Models/EyeAdaptationModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/FogModel.cs -> Assets/PostProcessing/Runtime/Models/FogModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/FogModel.cs.meta -> Assets/PostProcessing/Runtime/Models/FogModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/GrainModel.cs -> Assets/PostProcessing/Runtime/Models/GrainModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/GrainModel.cs.meta -> Assets/PostProcessing/Runtime/Models/GrainModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/MotionBlurModel.cs -> Assets/PostProcessing/Runtime/Models/MotionBlurModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/MotionBlurModel.cs.meta -> Assets/PostProcessing/Runtime/Models/MotionBlurModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs -> Assets/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs.meta -> Assets/PostProcessing/Runtime/Models/ScreenSpaceReflectionModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/UserLutModel.cs -> Assets/PostProcessing/Runtime/Models/UserLutModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/UserLutModel.cs.meta -> Assets/PostProcessing/Runtime/Models/UserLutModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/VignetteModel.cs -> Assets/PostProcessing/Runtime/Models/VignetteModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Models/VignetteModel.cs.meta -> Assets/PostProcessing/Runtime/Models/VignetteModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingBehaviour.cs -> Assets/PostProcessing/Runtime/PostProcessingBehaviour.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingBehaviour.cs.meta -> Assets/PostProcessing/Runtime/PostProcessingBehaviour.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingComponent.cs -> Assets/PostProcessing/Runtime/PostProcessingComponent.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingComponent.cs.meta -> Assets/PostProcessing/Runtime/PostProcessingComponent.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingContext.cs -> Assets/PostProcessing/Runtime/PostProcessingContext.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingContext.cs.meta -> Assets/PostProcessing/Runtime/PostProcessingContext.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingModel.cs -> Assets/PostProcessing/Runtime/PostProcessingModel.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingModel.cs.meta -> Assets/PostProcessing/Runtime/PostProcessingModel.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingProfile.cs -> Assets/PostProcessing/Runtime/PostProcessingProfile.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/PostProcessingProfile.cs.meta -> Assets/PostProcessing/Runtime/PostProcessingProfile.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils.meta -> Assets/PostProcessing/Runtime/Utils.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/ColorGradingCurve.cs -> Assets/PostProcessing/Runtime/Utils/ColorGradingCurve.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/ColorGradingCurve.cs.meta -> Assets/PostProcessing/Runtime/Utils/ColorGradingCurve.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/GraphicsUtils.cs -> Assets/PostProcessing/Runtime/Utils/GraphicsUtils.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/GraphicsUtils.cs.meta -> Assets/PostProcessing/Runtime/Utils/GraphicsUtils.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/MaterialFactory.cs -> Assets/PostProcessing/Runtime/Utils/MaterialFactory.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/MaterialFactory.cs.meta -> Assets/PostProcessing/Runtime/Utils/MaterialFactory.cs.meta
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/RenderTextureFactory.cs -> Assets/PostProcessing/Runtime/Utils/RenderTextureFactory.cs
+#	renamed:    Assets/_MK/MKToon/Example/PostProcessing/Runtime/Utils/RenderTextureFactory.cs.meta -> Assets/PostProcessing/Runtime/Utils/RenderTextureFactory.cs.meta
+#	new file:   Assets/PostProcessing/Textures.meta
+#	new file:   Assets/PostProcessing/Textures/LUTs.meta
+#	new file:   Assets/PostProcessing/Textures/LUTs/NeutralLUT_16.png
+#	new file:   Assets/PostProcessing/Textures/LUTs/NeutralLUT_16.png.meta
+#	new file:   Assets/PostProcessing/Textures/LUTs/NeutralLUT_32.png
+#	new file:   Assets/PostProcessing/Textures/LUTs/NeutralLUT_32.png.meta
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt.meta
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt00.png.meta
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt01.png.meta
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt02.png.meta
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png
+#	new file:   Assets/PostProcessing/Textures/Lens Dirt/LensDirt03.png.meta
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs.meta
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_BlueRed.tga.meta
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_GreenPurple.tga.meta
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_PurpleGreen.tga.meta
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga
+#	new file:   Assets/PostProcessing/Textures/Spectral LUTs/SpectralLut_RedBlue.tga.meta
+#	modified:   Assets/RAIN/Editor/RAINProjectState.asset
+#	modified:   Assets/Terrain_x0_y0.asset
+#	modified:   Assets/Terrain_x0_y1.asset
+#	modified:   Assets/Terrain_x0_y2.asset
+#	modified:   Assets/Terrain_x0_y3.asset
+#	modified:   Assets/Terrain_x0_y4.asset
+#	modified:   Assets/Terrain_x0_y5.asset
+#	modified:   Assets/Terrain_x0_y6.asset
+#	modified:   Assets/Terrain_x0_y7.asset
+#	modified:   Assets/Terrain_x1_y0.asset
+#	modified:   Assets/Terrain_x1_y1.asset
+#	modified:   Assets/Terrain_x1_y2.asset
+#	modified:   Assets/Terrain_x1_y3.asset
+#	modified:   Assets/Terrain_x1_y4.asset
+#	modified:   Assets/Terrain_x1_y5.asset
+#	modified:   Assets/Terrain_x1_y6.asset
+#	modified:   Assets/Terrain_x1_y7.asset
+#	modified:   Assets/Terrain_x2_y0.asset
+#	modified:   Assets/Terrain_x2_y1.asset
+#	modified:   Assets/Terrain_x2_y2.asset
+#	modified:   Assets/Terrain_x2_y3.asset
+#	modified:   Assets/Terrain_x2_y4.asset
+#	modified:   Assets/Terrain_x2_y5.asset
+#	modified:   Assets/Terrain_x2_y6.asset
+#	modified:   Assets/Terrain_x2_y7.asset
+#	modified:   Assets/Terrain_x3_y0.asset
+#	modified:   Assets/Terrain_x3_y1.asset
+#	modified:   Assets/Terrain_x3_y2.asset
+#	modified:   Assets/Terrain_x3_y3.asset
+#	modified:   Assets/Terrain_x3_y4.asset
+#	modified:   Assets/Terrain_x3_y5.asset
+#	modified:   Assets/Terrain_x3_y6.asset
+#	modified:   Assets/Terrain_x3_y7.asset
+#	modified:   Assets/Terrain_x4_y0.asset
+#	modified:   Assets/Terrain_x4_y1.asset
+#	modified:   Assets/Terrain_x4_y2.asset
+#	modified:   Assets/Terrain_x4_y3.asset
+#	modified:   Assets/Terrain_x4_y4.asset
+#	modified:   Assets/Terrain_x4_y5.asset
+#	modified:   Assets/Terrain_x4_y6.asset
+#	modified:   Assets/Terrain_x4_y7.asset
+#	modified:   Assets/Terrain_x5_y0.asset
+#	modified:   Assets/Terrain_x5_y1.asset
+#	modified:   Assets/Terrain_x5_y2.asset
+#	modified:   Assets/Terrain_x5_y3.asset
+#	modified:   Assets/Terrain_x5_y4.asset
+#	modified:   Assets/Terrain_x5_y5.asset
+#	modified:   Assets/Terrain_x5_y6.asset
+#	modified:   Assets/Terrain_x5_y7.asset
+#	modified:   Assets/Terrain_x6_y0.asset
+#	modified:   Assets/Terrain_x6_y1.asset
+#	modified:   Assets/Terrain_x6_y2.asset
+#	modified:   Assets/Terrain_x6_y3.asset
+#	modified:   Assets/Terrain_x6_y4.asset
+#	modified:   Assets/Terrain_x6_y5.asset
+#	modified:   Assets/Terrain_x6_y6.asset
+#	modified:   Assets/Terrain_x6_y7.asset
+#	modified:   Assets/Terrain_x7_y0.asset
+#	modified:   Assets/Terrain_x7_y1.asset
+#	modified:   Assets/Terrain_x7_y2.asset
+#	modified:   Assets/Terrain_x7_y3.asset
+#	modified:   Assets/Terrain_x7_y4.asset
+#	modified:   Assets/Terrain_x7_y5.asset
+#	modified:   Assets/Terrain_x7_y6.asset
+#	modified:   Assets/Terrain_x7_y7.asset
+#	modified:   Assets/TestLevel-old.unity
+#	new file:   Assets/TestLevel-simple.unity
+#	new file:   Assets/TestLevel-simple.unity.meta
+#	new file:   Assets/Textures/Brown Stony Light.png
+#	new file:   Assets/Textures/Brown Stony Light.png.meta
+#	new file:   Assets/Textures/Brown Stony.png
+#	new file:   Assets/Textures/Brown Stony.png.meta
+#	new file:   Assets/Textures/Grass.png
+#	new file:   Assets/Textures/Grass.png.meta
+#	new file:   Assets/Textures/Grey Stones.png
+#	new file:   Assets/Textures/Grey Stones.png.meta
+#	new file:   Assets/Textures/Ice blue.tga
+#	new file:   Assets/Textures/Ice blue.tga.meta
+#	new file:   Assets/Textures/Sandy Orange.png
+#	new file:   Assets/Textures/Sandy Orange.png.meta
+#	new file:   Assets/Textures/Sandy.png
+#	new file:   Assets/Textures/Sandy.png.meta
+#	new file:   Assets/Textures/Water Deep Blue.png
+#	new file:   Assets/Textures/Water Deep Blue.png.meta
+#	new file:   Assets/Textures/Water Light Blue.png
+#	new file:   Assets/Textures/Water Light Blue.png.meta
+#	new file:   Assets/Textures/dirt stones eary yellow.tga
+#	new file:   Assets/Textures/dirt stones eary yellow.tga.meta
+#	new file:   Assets/Textures/dirt stones leafs more.tga
+#	new file:   Assets/Textures/dirt stones leafs more.tga.meta
+#	new file:   Assets/Textures/dirt stones leafs.tga
+#	new file:   Assets/Textures/dirt stones leafs.tga.meta
+#	new file:   Assets/Textures/dirt stones.tga
+#	new file:   Assets/Textures/dirt stones.tga.meta
+#	new file:   Assets/Textures/granit grass.tga
+#	new file:   Assets/Textures/granit grass.tga.meta
+#	new file:   Assets/Textures/grey dirt stones.tga
+#	new file:   Assets/Textures/grey dirt stones.tga.meta
+#	new file:   Assets/Textures/ice.tga
+#	new file:   Assets/Textures/ice.tga.meta
+#	new file:   Assets/Textures/lava.tga
+#	new file:   Assets/Textures/lava.tga.meta
+#	new file:   Assets/Textures/leafs dark.tga
+#	new file:   Assets/Textures/leafs dark.tga.meta
+#	new file:   Assets/Textures/leafs.tga
+#	new file:   Assets/Textures/leafs.tga.meta
+#	new file:   Assets/Textures/sand stones.tga
+#	new file:   Assets/Textures/sand stones.tga.meta
+#	modified:   Assets/Time Of Day System Free/Art/Materials/TOD_SYSTEM_FREE_SKY.mat
+#	deleted:    Assets/_MK.meta
+#	deleted:    Assets/_MK/MKToon.meta
+#	deleted:    Assets/_MK/MKToon/Editor.meta
+#	deleted:    Assets/_MK/MKToon/Editor/MKToonEditor.cs
+#	deleted:    Assets/_MK/MKToon/Editor/MKToonEditor.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation/enemyanimatorcontroller.controller
+#	deleted:    Assets/_MK/MKToon/Example/Animation/enemyanimatorcontroller.controller.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation/gameoverclip.anim
+#	deleted:    Assets/_MK/MKToon/Example/Animation/gameoverclip.anim.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation/hellephantanimatoroverridecontroller.overridecontroller
+#	deleted:    Assets/_MK/MKToon/Example/Animation/hellephantanimatoroverridecontroller.overridecontroller.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation/hudcanvas.controller
+#	deleted:    Assets/_MK/MKToon/Example/Animation/hudcanvas.controller.meta
+#	deleted:    Assets/_MK/MKToon/Example/Animation/playeranimatorcontroller.controller
+#	deleted:    Assets/_MK/MKToon/Example/Animation/playeranimatorcontroller.controller.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Hellephant.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Hellephant.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/EyesMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/EyesMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/GunMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/GunMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Hellephant.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Hellephant/HellephantBase.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Hellephant/HellephantBase.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/HellephantMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/HellephantMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player/Gun.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player/Gun/GunBase.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player/Gun/GunBase.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player/PlayerBase.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Player/PlayerBase.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/PlayerMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/PlayerMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZomBear.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZomBear/ZombBearBase.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZomBear/ZombBearBase.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZombearMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZombearMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Zombunny.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Zombunny/ZombunnyBase.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/Zombunny/ZombunnyBase.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZombunnyMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Materials/ZombunnyMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Player.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Player.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/ZomBear.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Characters/ZomBear.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Zombunny.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Characters/Zombunny.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/ArchesMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/ArchesMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/BloxMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/BloxMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/PlanksMaterial.mat
+#	deleted:    Assets/_MK/MKToon/Example/Environment/Materials/PlanksMaterial.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/arches.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Environment/arches.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/blox.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Environment/blox.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/Environment/floor.fbx
+#	deleted:    Assets/_MK/MKToon/Example/Environment/floor.fbx.meta
+#	deleted:    Assets/_MK/MKToon/Example/MKToonFreeExample.unity
+#	deleted:    Assets/_MK/MKToon/Example/MKToonFreeExample.unity.meta
+#	deleted:    Assets/_MK/MKToon/Example/MKToonPostFX.asset
+#	deleted:    Assets/_MK/MKToon/Example/MKToonPostFX.asset.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Bluenoise64.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/AmbientOcclusion.cginc
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Resources/Shaders/TAA.cginc
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugMotionVectors.mat
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugMotionVectors.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugQuad.mat
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/DebugQuad.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/UVChecker.mat
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/UVChecker.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/WheelMotionVectors.mat
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Materials/WheelMotionVectors.mat.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Models.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Models/WheelMovecs.FBX
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Models/WheelMovecs.FBX.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Shaders.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Shaders/CustomMotionVectorTexture.shader
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Shaders/CustomMotionVectorTexture.shader.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/DebugMotionVectors.png
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/DebugMotionVectors.png.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/UVChecker.png
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/UVChecker.png.meta
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/WheelMotionVectors.png
+#	deleted:    Assets/_MK/MKToon/Example/PostProcessing/Utilities/CustomMotionTexture/Textures/WheelMotionVectors.png.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/EditorGUIHelper.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/EditorGUIHelper.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/FieldFinder.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/FieldFinder.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/MinDrawer.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/Editor/MinDrawer.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/ImageEffectHelper.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/ImageEffectHelper.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/MinAttribute.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/MinAttribute.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/RenderTextureUtility.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/Common/RenderTextureUtility.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/DepthOfField.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/DepthOfField.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Editor.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Editor/DepthOfFieldEditor.cs
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Editor/DepthOfFieldEditor.cs.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Helpers.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Helpers/RoundedHexShape.tif
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Helpers/RoundedHexShape.tif.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/bokehsplatting.shader
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/bokehsplatting.shader.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/depthoffield.shader
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/depthoffield.shader.meta
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/medianfilter.shader
+#	deleted:    Assets/_MK/MKToon/Example/Standard Assets/Effects/DepthOfField/Resources/medianfilter.shader.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ArchesDiffuse.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ArchesDiffuse.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/BloxDiffuse .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/BloxDiffuse .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp0.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp0.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp1.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp1.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp2.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ColorRamp2.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/GunDiffuse .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/GunDiffuse .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/HellephantDiffuse.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/HellephantDiffuse.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/HellephantEmissive .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/HellephantEmissive .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/MKToonFont.png
+#	deleted:    Assets/_MK/MKToon/Example/Textures/MKToonFont.png.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/PlanksDiffuse.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/PlanksDiffuse.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/PlayerDiffuse .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/PlayerDiffuse .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBearDiffuse.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBearDiffuse.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBearEmission .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBearEmission .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBunnyDiffuse.jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBunnyDiffuse.jpg.meta
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBunnyEmissive .jpg
+#	deleted:    Assets/_MK/MKToon/Example/Textures/ZomBunnyEmissive .jpg.meta
+#	deleted:    Assets/_MK/MKToon/Shader.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonDef.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonDef.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonInc.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonInc.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonLight.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonLight.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonV.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Common/MKToonV.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForward.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForward.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardAddSetup.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardAddSetup.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardBaseSetup.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardBaseSetup.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardIO.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Forward/MKToonForwardIO.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlyBase.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlyBase.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlyIO.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlyIO.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlySetup.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Outline/MKToonOutlineOnlySetup.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Surface.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Surface/MKToonSurface.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Surface/MKToonSurface.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Surface/MKToonSurfaceIO.cginc
+#	deleted:    Assets/_MK/MKToon/Shader/Inc/Surface/MKToonSurfaceIO.cginc.meta
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonFree.shader
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonFree.shader.meta
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonFreeMobile.shader
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonFreeMobile.shader.meta
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonOutlineOnly.shader
+#	deleted:    Assets/_MK/MKToon/Shader/MKToonOutlineOnly.shader.meta
+#	deleted:    Assets/kode80.meta
+#	deleted:    Assets/kode80/Clouds.meta
+#	deleted:    Assets/kode80/Clouds/AssetVersion.xml
+#	deleted:    Assets/kode80/Clouds/AssetVersion.xml.meta
+#	deleted:    Assets/kode80/Clouds/ChangeLog.txt
+#	deleted:    Assets/kode80/Clouds/ChangeLog.txt.meta
+#	deleted:    Assets/kode80/Clouds/Docs.meta
+#	deleted:    Assets/kode80/Clouds/Docs/kode80Clouds.epub
+#	deleted:    Assets/kode80/Clouds/Docs/kode80Clouds.epub.meta
+#	deleted:    Assets/kode80/Clouds/Docs/kode80Clouds.pdf
+#	deleted:    Assets/kode80/Clouds/Docs/kode80Clouds.pdf.meta
+#	deleted:    Assets/kode80/Clouds/Editor.meta
+#	deleted:    Assets/kode80/Clouds/Editor/CloudsEditor.cs
+#	deleted:    Assets/kode80/Clouds/Editor/CloudsEditor.cs.meta
+#	deleted:    Assets/kode80/Clouds/Editor/CubemapExporter.cs
+#	deleted:    Assets/kode80/Clouds/Editor/CubemapExporter.cs.meta
+#	deleted:    Assets/kode80/Clouds/Editor/TimeOfDayEditor.cs
+#	deleted:    Assets/kode80/Clouds/Editor/TimeOfDayEditor.cs.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_camera.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_camera.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_clearmap.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_clearmap.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_coverage.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_coverage.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_cubemap.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_cubemap.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_new.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_new.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_properties.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_properties.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_save.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_save.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_saveas.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_saveas.png.meta
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_type.png
+#	deleted:    Assets/kode80/Clouds/Editor/gui/button_type.png.meta
+#	deleted:    Assets/kode80/Clouds/Examples.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Materials.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Materials/kode80CloudsDemoSkybox.mat
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Materials/kode80CloudsDemoSkybox.mat.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Models.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Models/kode80CloudsDemoTerrain.asset
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Models/kode80CloudsDemoTerrain.asset.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Scripts.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Scripts/FlyCamera.cs
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Scripts/FlyCamera.cs.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/CliffAlbedoSpecular.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/CliffAlbedoSpecular.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/CliffNormals.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/CliffNormals.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Coverage.png
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Coverage.png.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/GrassHillAlbedo.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/GrassHillAlbedo.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Moss_03_A.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Moss_03_A.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Moss_03_N.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Moss_03_N.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Soil_Mud01_d.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Soil_Mud01_d.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Soil_Mud_Floor_39c246142130_large_nd.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/Soil_Mud_Floor_39c246142130_large_nd.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/rock_d.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/rock_d.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/rock_n.tif
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/Textures/rock_n.tif.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/kode80Clouds.prefab
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/kode80Clouds.prefab.meta
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/kode80CloudsDemoScene.unity
+#	deleted:    Assets/kode80/Clouds/Examples/Demo/kode80CloudsDemoScene.unity.meta
+#	deleted:    Assets/kode80/Clouds/Resources.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudBlender.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudBlender.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudBlenderEditor.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudBlenderEditor.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudCombiner.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudCombiner.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudShadowPass.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudShadowPass.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudsCrepuscularRays.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CloudsCrepuscularRays.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CurlNoise.png
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/CurlNoise.png.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/TextureBrush.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/TextureBrush.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/VolumeClouds.shader
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/VolumeClouds.shader.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/VolumeCloudsCommon.cginc
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/VolumeCloudsCommon.cginc.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/noise.bytes
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/noise.bytes.meta
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/noise_detail.bytes
+#	deleted:    Assets/kode80/Clouds/Resources/kode80Clouds/noise_detail.bytes.meta
+#	deleted:    Assets/kode80/Clouds/Scripts.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/BehaviorStateStore.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/BehaviorStateStore.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/CrepuscularRays.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/CrepuscularRays.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/EditorState.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/EditorState.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/FullScreenQuad.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/FullScreenQuad.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/RenderSettings.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/RenderSettings.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/SharedProperties.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/SharedProperties.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/TexturePainter.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/TexturePainter.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/TimeOfDay.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/TimeOfDay.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/TimeOfDayKeyFrame.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/TimeOfDayKeyFrame.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/kode80CloudShadows.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/kode80CloudShadows.cs.meta
+#	deleted:    Assets/kode80/Clouds/Scripts/kode80Clouds.cs
+#	deleted:    Assets/kode80/Clouds/Scripts/kode80Clouds.cs.meta
+#	deleted:    Assets/kode80/Clouds/kode80CloudsNonCommercialLicense.html
+#	deleted:    Assets/kode80/Clouds/kode80CloudsNonCommercialLicense.html.meta
+#	deleted:    Assets/kode80/Editor.meta
+#	deleted:    Assets/kode80/Editor/Localization.meta
+#	deleted:    Assets/kode80/Editor/Localization/Localize.cs
+#	deleted:    Assets/kode80/Editor/Localization/Localize.cs.meta
+#	deleted:    Assets/kode80/Editor/Utils.meta
+#	deleted:    Assets/kode80/Editor/Utils/ScriptableObjectUtility.cs
+#	deleted:    Assets/kode80/Editor/Utils/ScriptableObjectUtility.cs.meta
+#	deleted:    Assets/kode80/Editor/Utils/UnityFileUtility.cs
+#	deleted:    Assets/kode80/Editor/Utils/UnityFileUtility.cs.meta
+#	deleted:    Assets/kode80/Effects.meta
+#	deleted:    Assets/kode80/Effects/Resources.meta
+#	deleted:    Assets/kode80/Effects/Resources/FilmicTonemapping.shader
+#	deleted:    Assets/kode80/Effects/Resources/FilmicTonemapping.shader.meta
+#	deleted:    Assets/kode80/Effects/Scripts.meta
+#	deleted:    Assets/kode80/Effects/Scripts/FilmicTonemapping.cs
+#	deleted:    Assets/kode80/Effects/Scripts/FilmicTonemapping.cs.meta
+#	deleted:    Assets/kode80/UnityTools.meta
+#	deleted:    Assets/kode80/UnityTools/AssetVersion.xml
+#	deleted:    Assets/kode80/UnityTools/AssetVersion.xml.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/ComponentContextMenu.cs
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/ComponentContextMenu.cs.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/ComponentList.cs
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/ComponentList.cs.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/RecordVideoWindow.cs
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Editor/RecordVideoWindow.cs.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Scripts.meta
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Scripts/RecordVideo.cs
+#	deleted:    Assets/kode80/UnityTools/EditorTools/Scripts/RecordVideo.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIBase.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIBase.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIBaseContainer.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIBaseContainer.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIButton.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIButton.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIColorField.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIColorField.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIDefaultInspector.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIDefaultInspector.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIDelayedIntField.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIDelayedIntField.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIEnumPopup.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIEnumPopup.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIFoldout.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIFoldout.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIHorizontal.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIHorizontal.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIIntSlider.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIIntSlider.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUILabel.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUILabel.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIObjectField.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIObjectField.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIPopup.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIPopup.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIScrollView.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIScrollView.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUISlider.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUISlider.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUISpace.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUISpace.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUITextField.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUITextField.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUITextureField.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUITextureField.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIToggle.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIToggle.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIToolbar.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIToolbar.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIVector3Field.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIVector3Field.cs.meta
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIVertical.cs
+#	deleted:    Assets/kode80/UnityTools/GUIWrapper/Editor/GUIVertical.cs.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetUpdateWindow.cs
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetUpdateWindow.cs.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetUpdater.cs
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetUpdater.cs.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetVersion.cs
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetVersion.cs.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetVersionDownloader.cs
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/AssetVersionDownloader.cs.meta
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/SemanticVersion.cs
+#	deleted:    Assets/kode80/UnityTools/Versioning/Editor/SemanticVersion.cs.meta
+#	new file:   Assets/read me.txt
+#	new file:   Assets/read me.txt.meta
+#	modified:   ProjectSettings/EditorBuildSettings.asset
+#	deleted:    docs/Release/UnityLoader.js
+#	deleted:    docs/Release/docs.datagz
+#	deleted:    docs/Release/docs.jsgz
+#	deleted:    docs/Release/docs.memgz
+#	deleted:    docs/TemplateData/UnityProgress.js
+#	deleted:    docs/TemplateData/favicon.ico
+#	deleted:    docs/TemplateData/fullbar.png
+#	deleted:    docs/TemplateData/fullscreen.png
+#	deleted:    docs/TemplateData/loadingbar.png
+#	deleted:    docs/TemplateData/logo.png
+#	deleted:    docs/TemplateData/progresslogo.png
+#	deleted:    docs/TemplateData/style.css
+#	deleted:    docs/index.html
+#
+# Changes not staged for commit:
+#	modified:   Assets/AQUAS-Lite/Materials/AQUAS_Lite_Water.mat
+#	modified:   Assets/TestLevel-simple.unity
+#
+# Untracked files:
+#	docs/
+#
+

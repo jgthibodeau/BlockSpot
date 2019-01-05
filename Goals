@@ -1,0 +1,8 @@
+Goals
+- Simple to control and understand
+- Ramping difficulty
+- Music beats play into event timing
+
+Use 1x1 blocks for player
+Use .5x.5 blocks for walls
+Some walls change player shape, glow and sound when this happens, skip the next several beats so player can recognize the new shape

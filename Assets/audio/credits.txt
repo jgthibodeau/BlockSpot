@@ -1,0 +1,7 @@
+title - https://freesound.org/people/levelclearer/sounds/330708/
+background - https://freesound.org/people/Xythe/sounds/100873/
+missile - https://freesound.org/people/runningmind/sounds/387857/
+explosion - https://freesound.org/people/ggctuk/sounds/80500/
+debris - https://freesound.org/people/HighPixel/sounds/431174/
+thruster - https://freesound.org/people/DJT4NN3R/sounds/347576/
+gravity - https://freesound.org/people/arnaljl/sounds/67878/
