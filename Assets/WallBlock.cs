@@ -11,8 +11,11 @@ public class WallBlock : MonoBehaviour
     public WallFailure wallFailure;
 
     public GameObject defaultBlocks;
-    private Renderer[] defaultBlockRenderers;
-    public Material explodedMaterial;
+    //MeshRenderer[] children;
+
+    public List<Transform> rotatableChildren;
+    public Transform rotatableGrandChildren;
+    public Transform hiddenGrandChildren;
 
     public bool Is90DegreeRotationValid()
     {
@@ -31,68 +34,121 @@ public class WallBlock : MonoBehaviour
     {
         wallSuccesses = GetComponentsInChildren<WallSuccess>();
         wallFailure = GetComponentInChildren<WallFailure>();
-        defaultBlockRenderers = defaultBlocks.GetComponentsInChildren<Renderer>();
+        //children = transform.GetComponentsInChildren<MeshRenderer>();
     }
 
-    public void Explode(float z)
+    public void Explode()
     {
-        foreach (Renderer renderer in defaultBlockRenderers)
-        {
-            renderer.material = explodedMaterial;
-        }
-
         Vector3 position = transform.position;
         position.z -= 0.001f;
         transform.position = position;
-        StartCoroutine(DoExplosion(z));
+        StartCoroutine(DoExplosion());
     }
 
     private float explodeSpeed = 5;
-    private float explodeRotateSpeed = 200;
-    private float explodeScaleSpeed = 3f;
-    private IEnumerator DoExplosion(float z)
+    private float explodeRotateSpeed = 300;
+    private float explodeScaleSpeed = 1.5f;
+    private float explodeLineScaleSpeed = 0.5f;
+    private IEnumerator DoExplosion()
     {
-        MeshRenderer[] children = transform.GetComponentsInChildren<MeshRenderer>();
-        
-        foreach (MeshRenderer r in children)
-        {
-            Transform t = r.transform;
-            if (Mathf.Approximately(t.localPosition.x, 0) && Mathf.Approximately(t.localPosition.y, 0))
-            {
-                r.enabled = false;
-            }
-        }
-        
+        //foreach (Transform t in rotatableChildren)
+        //{
+        //    TryHideObject(t);
+        //}
+        hiddenGrandChildren.gameObject.SetActive(false);
+        //yield return null;
+
+        //int i = 0;
+        //foreach (Transform t in rotatableGrandChildren.transform)
+        //{
+        //    if (t.parent == rotatableGrandChildren)
+        //    {
+        //        TryHideObject(t);
+        //    }
+        //    //if (i % 100 == 0)
+        //    //{
+        //    //    yield return null;
+        //    //}
+        //    //i++;
+        //}
+        //yield return null;
+
+        rotatableGrandChildren.gameObject.SetActive(true);
+        Vector3 rotation = transform.eulerAngles;
         while (true)
         {
-            Vector3 rotation = transform.eulerAngles;
             rotation.z += explodeRotateSpeed * Time.deltaTime;
-            transform.eulerAngles = rotation;
+            //transform.eulerAngles = rotation;
 
-            foreach (MeshRenderer r in children)
+            foreach (Transform t in rotatableChildren)
             {
-                Transform t = r.transform;
+                RotateObject(t, rotation, true);
+            }
 
-                Vector3 newPosition = t.position;
-                newPosition += (t.position - transform.position) * explodeSpeed * Time.deltaTime;
-                newPosition.z = z;
-                t.position = newPosition;
-
-                t.eulerAngles = rotation;
-
-                float newScale = t.localScale.x;
-                newScale -= explodeScaleSpeed * Time.deltaTime;
-                if (newScale < 0)
+            //i = 0;
+            foreach (Transform t in rotatableGrandChildren.transform)
+            {
+                if (t.parent == rotatableGrandChildren)
                 {
-                    newScale = 0;
+                    RotateObject(t, rotation, false);
                 }
-                t.localScale = new Vector3(newScale, newScale, newScale);
+                //if (i % 100 == 0)
+                //{
+                //    yield return null;
+                //}
+                //i++;
             }
 
             yield return null;
         }
     }
-    
+
+    private void TryHideObject(Transform t)
+    {
+        if (Mathf.Approximately(t.localPosition.x, 0) && Mathf.Approximately(t.localPosition.y, 0))
+        {
+            t.gameObject.SetActive(false);
+        }
+    }
+
+    private void RotateObject(Transform t, Vector3 rotation, bool isLineRenderer)
+    {
+        //Vector3 newPosition = t.position;
+        //newPosition += (t.position - transform.position) * explodeSpeed * Time.deltaTime;
+        //newPosition.z = 0;
+        //t.position = newPosition;
+
+        t.eulerAngles = rotation;
+
+        float newScale = t.localScale.x;
+        newScale -= explodeScaleSpeed * Time.deltaTime;
+        if (newScale < 0)
+        {
+            newScale = 0;
+        }
+        if (isLineRenderer)
+        {
+            LineRenderer lineRenderer = t.GetComponentInChildren<LineRenderer>();
+            if (lineRenderer != null)
+            {
+                float lineScale = lineRenderer.widthMultiplier - explodeLineScaleSpeed * Time.deltaTime;
+                if (lineScale < 0)
+                {
+                    lineScale = 0;
+                }
+                lineRenderer.widthMultiplier = lineScale;
+            } else
+            {
+                isLineRenderer = false;
+            }
+        }
+
+        if (!isLineRenderer)
+        {
+            t.localScale = new Vector3(newScale, newScale, newScale);
+        }
+    }
+
     public void TriggerColliders(MovingWall wall, Player player)
     {
         if (IsSuccessfulHit(player))
@@ -152,7 +208,7 @@ public class WallBlock : MonoBehaviour
 
     private void Success(GameObject go, MovingWall wall)
     {
-        Explode(go.transform.position.z);
+        Explode();
 
         if (!wall.alreadyHit)
         {
@@ -164,7 +220,7 @@ public class WallBlock : MonoBehaviour
 
     public void Fail(GameObject go, MovingWall wall)
     {
-        Explode(go.transform.position.z);
+        Explode();
 
         if (!wall.alreadyHit)
         {

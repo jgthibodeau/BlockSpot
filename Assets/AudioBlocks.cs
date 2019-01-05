@@ -34,7 +34,9 @@ public class AudioBlocks : MonoBehaviour
 
             if (randomMaterial)
             {
-                newBlock.GetComponent<Renderer>().material = materials[Random.Range(0, materials.Length)];
+                //newBlock.GetComponent<Renderer>().material = materials[Random.Range(0, materials.Length)];
+                int index = (int)Util.ConvertScale(0, numberCubes, 0, materials.Length, i);
+                newBlock.GetComponent<Renderer>().material = materials[index];
             }
             
             int randomX;

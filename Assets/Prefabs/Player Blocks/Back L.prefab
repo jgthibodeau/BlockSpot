@@ -283,6 +283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 514273926359200258}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001
@@ -376,6 +380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959642649101483448, guid: 4b51053f730e0ac45b9d14134877eb9c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 2961711752328106975, guid: 4b51053f730e0ac45b9d14134877eb9c,
         type: 3}
@@ -492,6 +501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7285774945129616831}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001
@@ -511,6 +524,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415838847747176074}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001

@@ -45,21 +45,22 @@ public class GyroCalibration : MonoBehaviour
         //wait seconds
         for (int i=gyroCalibrationDelay; i>0; i--)
         {
-            yield return new WaitForSeconds(1);
             text.text = "" + i;
+            yield return new WaitForSecondsRealtime(1);
         }
 
         InprogressView();
 
         //listen for 3 seconds and get an average drift
         gyroDrift = Vector3.zero;
+        Util.ResetGyro();
         for (int i = 0; i < gyroCalibrationCount; i++)
         {
             text.text = inProgressText + "  " + i + "/" + gyroCalibrationCount;
             gyroDrift += Input.gyro.rotationRateUnbiased;
             yield return null;
         }
-        gyroDrift = gyroDrift / gyroCalibrationCount;
+        gyroDrift = - gyroDrift / gyroCalibrationCount;
 
         //store calibration
         SaveCalibration();

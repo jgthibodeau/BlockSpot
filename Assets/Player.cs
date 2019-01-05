@@ -391,7 +391,7 @@ public class Player : MonoBehaviour
         bool updateGyro = !doubleClickFreeze || !(TCKInput.GetAction("Left", EActionEvent.Press) && TCKInput.GetAction("Right", EActionEvent.Press));
         if (!freezeGyro && updateGyro)
         {
-            Vector3 gyroInput = Input.gyro.rotationRateUnbiased - gyroCalibration;
+            Vector3 gyroInput = Input.gyro.rotationRateUnbiased + gyroCalibration;
 
             //Vector3 gyroInput = Input.gyro.rotationRate;
             //Vector3 gyroInput = Input.acceleration;

@@ -6,15 +6,6 @@ using TMPro;
 [RequireComponent(typeof(WallGenerator))]
 public class WallController : MonoBehaviour
 {
-    [System.Serializable]
-    public class DifficultyLevel
-    {
-        public float moveSpeed;
-        public int wallsTillNextLevel;
-        public int pointsPerSuccess;
-    }
-    public DifficultyLevel[] difficultyLevels;
-    //public int currentDifficulty;
     public int currentWallsHit = 0;
 
     public Difficulty difficulty;
@@ -24,6 +15,8 @@ public class WallController : MonoBehaviour
     public int speedupScoreScale = 2;
     public bool boosting;
     public float initialWallSpawnTime;
+
+    public GameObject scoreObject;
 
     public GameObject levelUpObject;
     public TMPro.TMP_Text levelUpText;
@@ -47,26 +40,15 @@ public class WallController : MonoBehaviour
         wallGenerator = GetComponent<WallGenerator>();
         difficulty = GetComponent<Difficulty>();
         player = myGameManager.GetPlayer();
-        //currentDifficulty = 0;
         difficulty.SetDifficulty(PlayerPrefs.GetInt(Options.STARTING_LEVEL, 0));
         currentMultiplier = 1;
 
         StartCoroutine(InitialWall());
     }
 
-    //public DifficultyLevel GetCurrentDifficulty()
-    //{
-    //    return difficultyLevels[currentDifficulty];
-    //}
-
-    //public float GetCurrentWallSpeed()
-    //{
-    //    return GetCurrentDifficulty().moveSpeed;
-    //}
-
     public void HitWall(bool success, Player player)
     {
-        int previousDifficulty = difficulty.CurrentLevel(); //currentDifficulty;
+        int previousDifficulty = difficulty.CurrentLevel();
         if (success)
         {
             HandleSuccessfulHit(player);
@@ -90,7 +72,6 @@ public class WallController : MonoBehaviour
         {
             float percent = Util.ConvertScale(0, levelUpTextDelay, 0, 1, time);
             percent = levelUpSizeCurve.Evaluate(percent);
-            //levelUpText.fontSize = fontScale * percent;
             levelUpObject.transform.localScale = new Vector3(percent, percent, 1);
 
             time += Time.deltaTime;
@@ -104,12 +85,14 @@ public class WallController : MonoBehaviour
 
     private void HandleSuccessfulHit(Player player)
     {
-        int newScore = difficulty.GetAsInt(difficulty.pointsPerWall) * currentMultiplier; //GetCurrentDifficulty().pointsPerSuccess * currentMultiplier;
+        int newScore = difficulty.GetAsInt(difficulty.pointsPerWall) * currentMultiplier;
         if (boosting)
         {
             newScore *= speedupScoreScale;
         }
         player.score += newScore;
+
+        //TODO show scoreObject
 
         if (currentMultiplier < maxMultiplier)
         {
@@ -117,19 +100,10 @@ public class WallController : MonoBehaviour
         }
 
         currentWallsHit++;
-        if (currentWallsHit >= difficulty.Get(difficulty.wallsTillNextLevel)) //GetCurrentDifficulty().wallsTillNextLevel)
+        if (currentWallsHit >= difficulty.Get(difficulty.wallsTillNextLevel))
         {
             currentWallsHit = 0;
             difficulty.IncreaseDifficulty();
-
-            //if (currentDifficulty <= difficultyLevels.Length)
-            //{
-            //    currentDifficulty++;
-            //    currentWallsHit = 0;
-            //} else
-            //{
-            //    currentWallsHit--;
-            //}
         }
     }
 
@@ -174,8 +148,6 @@ public class WallController : MonoBehaviour
                 randomWallCount++;
             }
         }
-
-        Debug.Log("maxRandomTiles " + maxRandomTiles + ", randomChance " + randomChance + ", randomWallCount " + randomWallCount);
 
         spawnedWall = wallGenerator.CreateWall(player.currentType, 1, randomWallCount);
         spawnedWall.initialPosition = startingPoint;

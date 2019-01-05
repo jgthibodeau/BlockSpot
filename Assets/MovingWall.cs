@@ -95,9 +95,9 @@ public class MovingWall : MonoBehaviour
     {
         WallBlock[] wallBlocks = gameObject.GetComponentsInChildren<WallBlock>();
 
-        foreach(WallBlock w in wallBlocks)
+        foreach(WallBlock wallBlock in wallBlocks)
         {
-            w.Explode(transform.position.z);
+            wallBlock.Explode();
         }
     }
 

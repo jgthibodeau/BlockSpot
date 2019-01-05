@@ -283,6 +283,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3187828715300799832}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001
@@ -302,6 +306,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2909753488126941310}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001
@@ -321,6 +329,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1199830372433665058}
     m_Modifications:
+    - target: {fileID: 400002, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
+      objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: e391c23eef5ff9a4b9a590a887caa8dc, type: 3}
       propertyPath: m_NearClipPlane
       value: 0.00001
@@ -424,6 +436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959642649101483448, guid: 4b51053f730e0ac45b9d14134877eb9c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 2961711752328106975, guid: 4b51053f730e0ac45b9d14134877eb9c,
         type: 3}
@@ -554,6 +571,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Parameters.colorGradient.key1.a
       value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959642649094107994, guid: 4b51053f730e0ac45b9d14134877eb9c,
+        type: 3}
+      propertyPath: m_NearClipPlane
+      value: 0.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4959642649094107994, guid: 4b51053f730e0ac45b9d14134877eb9c,
+        type: 3}
+      propertyPath: m_Orthographic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b51053f730e0ac45b9d14134877eb9c, type: 3}
