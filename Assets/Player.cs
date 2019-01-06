@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     
     Vector3 gyroVector;
     public float gyroSensitivity = 2;
+    public float boostingSensitivity = 0.5f;
     public Vector3 gyroCalibration = Vector3.zero;
     public Vector3 gyroDeadzone = new Vector3(0.01f, 0.01f, 0.01f);
     public float rotateSpeed = 8;
@@ -290,7 +291,7 @@ public class Player : MonoBehaviour
     void StopBoost()
     {
         //freezeGyro = false;
-        //wallController.DecreaseCurrentSpeed();
+        wallController.DecreaseCurrentSpeed();
     }
 
     private Vector2 swipeStart = Vector2.zero;
@@ -334,7 +335,7 @@ public class Player : MonoBehaviour
                 break;
             case ETouchPhase.Ended:
                 ResetSwipe();
-                StopBoost();
+                //StopBoost();
                 break;
         }
     }
@@ -395,17 +396,22 @@ public class Player : MonoBehaviour
 
             //Vector3 gyroInput = Input.gyro.rotationRate;
             //Vector3 gyroInput = Input.acceleration;
+            float sensitivity = gyroSensitivity;
+            if (wallController.boosting)
+            {
+                sensitivity *= boostingSensitivity;
+            }
             if (Mathf.Abs(gyroInput.x) > gyroDeadzone.x)
             {
-                gyroVector.x += gyroInput.x * gyroSensitivity;
+                gyroVector.x += gyroInput.x * sensitivity;
             }
             if (Mathf.Abs(gyroInput.y) > gyroDeadzone.y)
             {
-                gyroVector.y += gyroInput.y * gyroSensitivity;
+                gyroVector.y += gyroInput.y * sensitivity;
             }
             if (Mathf.Abs(gyroInput.z) > gyroDeadzone.z)
             {
-                gyroVector.z += gyroInput.z * gyroSensitivity;
+                gyroVector.z += gyroInput.z * sensitivity;
             }
         }
         
@@ -489,9 +495,9 @@ public class Player : MonoBehaviour
         {
             StartBoost();
         }
-        if (TCKInput.GetAction("Faster", EActionEvent.Up))
-        {
-            StopBoost();
-        }
+        //if (TCKInput.GetAction("Faster", EActionEvent.Up))
+        //{
+        //    StopBoost();
+        //}
     }
 }

@@ -141,7 +141,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1934}
   m_LocalScale: {x: 9000, y: 1, z: 3000}
-  m_Children: []
+  m_Children:
+  - {fileID: 9125289427078690155}
   m_Father: {fileID: 1621125081}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -160,13 +161,15 @@ MonoBehaviour:
   audioSpectrum: {fileID: 1621125082}
   block: {fileID: 4753917090415575838, guid: 2bba37d6168e48348ae351000310a522, type: 3}
   numberCubes: 50
-  blockWidth: 0.0416
-  blockHeight: 0.1125
+  blockWidth: 0.04167
+  blockHeight: 0.125
+  originalBlockWidth: 0.039
+  originalBlockHeight: 0.117
   minX: -25
   maxX: 25
   minY: -39
   maxY: 39
-  scaleSpeed: 15
+  scaleSpeed: 12
   spectrumPower: 0.75
   spectrumPreScale: 25
   spectrumScale: 100000
@@ -905,13 +908,15 @@ MonoBehaviour:
   audioSpectrum: {fileID: 1621125082}
   block: {fileID: 4753917090415575838, guid: 2bba37d6168e48348ae351000310a522, type: 3}
   numberCubes: 50
-  blockWidth: 0.0416
-  blockHeight: 0.1125
+  blockWidth: 0.04167
+  blockHeight: 0.125
+  originalBlockWidth: 0.039
+  originalBlockHeight: 0.117
   minX: -25
   maxX: 25
   minY: -39
   maxY: 39
-  scaleSpeed: 15
+  scaleSpeed: 12
   spectrumPower: 0.75
   spectrumPreScale: 25
   spectrumScale: 100000
@@ -1391,13 +1396,15 @@ MonoBehaviour:
   audioSpectrum: {fileID: 1621125082}
   block: {fileID: 4753917090415575838, guid: 2bba37d6168e48348ae351000310a522, type: 3}
   numberCubes: 50
-  blockWidth: 0.0416
-  blockHeight: 0.1125
+  blockWidth: 0.04167
+  blockHeight: 0.125
+  originalBlockWidth: 0.039
+  originalBlockHeight: 0.117
   minX: -25
   maxX: 25
   minY: -39
   maxY: 39
-  scaleSpeed: 15
+  scaleSpeed: 12
   spectrumPower: 0.75
   spectrumPreScale: 25
   spectrumScale: 100000
@@ -1485,8 +1492,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 61934}
   m_LocalScale: {x: 9000, y: 1, z: 3000}
-  m_Children:
-  - {fileID: 9125289427078690155}
+  m_Children: []
   m_Father: {fileID: 1621125081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1505,13 +1511,15 @@ MonoBehaviour:
   audioSpectrum: {fileID: 1621125082}
   block: {fileID: 4753917090415575838, guid: 2bba37d6168e48348ae351000310a522, type: 3}
   numberCubes: 50
-  blockWidth: 0.0416
-  blockHeight: 0.1125
+  blockWidth: 0.04167
+  blockHeight: 0.125
+  originalBlockWidth: 0.039
+  originalBlockHeight: 0.117
   minX: -25
   maxX: 25
   minY: -39
   maxY: 39
-  scaleSpeed: 15
+  scaleSpeed: 12
   spectrumPower: 0.75
   spectrumPreScale: 25
   spectrumScale: 100000
@@ -2181,7 +2189,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1522889503}
+    m_TransformParent: {fileID: 122853695}
     m_Modifications:
     - target: {fileID: 4753917090415575838, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
@@ -2196,32 +2204,32 @@ PrefabInstance:
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.062
+      value: -0.0209
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.062
+      value: -0.0625
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
@@ -2251,6 +2259,11 @@ PrefabInstance:
     - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
         type: 3}
       propertyPath: m_LocalScale.x
+      value: 0.0385
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125289427078690155, guid: 2bba37d6168e48348ae351000310a522,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 0.125
       objectReference: {fileID: 0}
     m_RemovedComponents:

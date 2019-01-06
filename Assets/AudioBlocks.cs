@@ -11,6 +11,9 @@ public class AudioBlocks : MonoBehaviour
     public float blockWidth = 0.0416f;
     public float blockHeight = 0.1125f;
 
+    public float originalBlockWidth = 0.39f;
+    public float originalBlockHeight = 0.117f;
+
     public int minX = -25, maxX = 25, minY = -39, maxY = 39;
 
     public float scaleSpeed = 10;
@@ -38,22 +41,38 @@ public class AudioBlocks : MonoBehaviour
                 int index = (int)Util.ConvertScale(0, numberCubes, 0, materials.Length, i);
                 newBlock.GetComponent<Renderer>().material = materials[index];
             }
-            
-            int randomX;
-            if (Random.value > 0.5f)
-            {
-                randomX = Random.Range(minX, -1);
-            } else
-            {
-                randomX = Random.Range(1, maxX);
-            }
-            int randomY = Random.Range(minY, maxY);
 
-            float x = (randomX + 0.5f) * blockWidth;
-            float y = (randomY + 0.5f) * blockHeight;
+            Vector2 randomPos = GetRandomPos();
+            float x = (randomPos.x + 0.5f) * blockWidth;
+            float y = (randomPos.y + 0.5f) * blockHeight;
             newBlock.transform.localPosition = new Vector3(x, -0.1f, y);
             blocks.Add(newBlock);
         }
+    }
+
+    List<Vector2> posList = new List<Vector2>();
+    Vector2 GetRandomPos()
+    {
+        Vector2 randomPos;
+
+        do
+        {
+            if (Random.value > 0.5f)
+            {
+                randomPos.x = Random.Range(minX, -1);
+            }
+            else
+            {
+                randomPos.x = Random.Range(1, maxX);
+            }
+            
+            randomPos.y = Random.Range(minY, maxY);
+
+        } while (posList.Contains(randomPos));
+
+        posList.Add(randomPos);
+
+        return randomPos;
     }
     
     void Update()
@@ -72,8 +91,11 @@ public class AudioBlocks : MonoBehaviour
 
             spectrumValue = spectrumScale * Mathf.Pow(spectrumPreScale * spectrumValue, spectrumPower);
 
-            Vector3 localScale = new Vector3(blockWidth, spectrumValue, blockHeight);
-            blocks[i].transform.localScale = Vector3.Lerp(blocks[i].transform.localScale, localScale, scaleSpeed * Time.deltaTime);
+            Vector3 newScale = blocks[i].transform.localScale;
+            newScale.x = originalBlockWidth;
+            newScale.z = originalBlockHeight;
+            newScale.y = Mathf.Lerp(newScale.y, spectrumValue, scaleSpeed * Time.deltaTime);
+            blocks[i].transform.localScale = newScale;
         }
     }
 }

@@ -69,6 +69,12 @@ public class MovingWall : MonoBehaviour
         {
             block.TriggerColliders(this, player);
         }
+        if (!alreadyHit)
+        {
+            //Explode();
+            Hit();
+            player.HitWall();
+        }
     }
 
     public void Activate()

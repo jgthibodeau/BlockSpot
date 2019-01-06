@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400002}
-  - component: {fileID: 11900000}
   - component: {fileID: 8887954028163943503}
   m_Layer: 0
   m_Name: SquareShadowProjector 1
@@ -33,25 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!119 &11900000
-Projector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_NearClipPlane: 0.00001
-  m_FarClipPlane: 5000
-  m_FieldOfView: 30
-  m_AspectRatio: 1
-  m_Orthographic: 1
-  m_OrthographicSize: 0.75
-  m_Material: {fileID: 2100000, guid: e40d02390ce9b6341bf0c36f51dc7f1b, type: 2}
-  m_IgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &8887954028163943503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDistance: 1500
+  offset: {x: 0, y: 0, z: -0.001}
   layers:
     serializedVersion: 2
     m_Bits: 1536

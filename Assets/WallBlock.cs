@@ -46,8 +46,8 @@ public class WallBlock : MonoBehaviour
     }
 
     private float explodeSpeed = 5;
-    private float explodeRotateSpeed = 300;
-    private float explodeScaleSpeed = 1.5f;
+    private float explodeRotateSpeed = 250;
+    private float explodeScaleSpeed = 3f;
     private float explodeLineScaleSpeed = 0.5f;
     private IEnumerator DoExplosion()
     {
@@ -151,13 +151,16 @@ public class WallBlock : MonoBehaviour
 
     public void TriggerColliders(MovingWall wall, Player player)
     {
-        if (IsSuccessfulHit(player))
+        if (!wall.alreadyHit && IsSuccessfulHit(player))
         {
-            Success(MyGameManager.instance.GetPlayer().gameObject, wall);
-        } else if (wallFailure.ContainsPlayer())
-        {
-            Fail(MyGameManager.instance.GetPlayer().gameObject, wall);
-        }
+            //Success(player, wall);
+            wall.Hit();
+            player.HitGoal();
+        } //else if (wallFailure.ContainsPlayer())
+        //{
+            //Fail(player, wall);
+        //}
+        Explode();
     }
 
     private bool IsSuccessfulHit(Player player)
@@ -206,27 +209,27 @@ public class WallBlock : MonoBehaviour
             || (Mathf.Approximately(angleDifference, 270) && Is90DegreeRotationValid());
     }
 
-    private void Success(GameObject go, MovingWall wall)
-    {
-        Explode();
+    //private void Success(Player player, MovingWall wall)
+    //{
+    //    Explode();
 
-        if (!wall.alreadyHit)
-        {
-            wall.Hit();
-            Player p = go.GetComponentInParent<Player>();
-            p.HitGoal();
-        }
-    }
+    //    if (!wall.alreadyHit)
+    //    {
+    //        //wall.Explode();
+    //        wall.Hit();
+    //        player.HitGoal();
+    //    }
+    //}
 
-    public void Fail(GameObject go, MovingWall wall)
-    {
-        Explode();
+    //public void Fail(Player player, MovingWall wall)
+    //{
+    //    Explode();
 
-        if (!wall.alreadyHit)
-        {
-            wall.Hit();
-            Player p = go.GetComponentInParent<Player>();
-            p.HitWall();
-        }
-    }
+    //    if (!wall.alreadyHit)
+    //    {
+    //        //wall.Explode();
+    //        wall.Hit();
+    //        player.HitWall();
+    //    }
+    //}
 }

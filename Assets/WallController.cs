@@ -114,19 +114,20 @@ public class WallController : MonoBehaviour
 
     public void IncreaseCurrentSpeed()
     {
+        boosting = true;
         if (spawnedWall != null)
         {
-            boosting = true;
-            spawnedWall.speed = difficulty.Get(difficulty.speed) * speedupScale; //GetCurrentWallSpeed() * speedupScale;
+            spawnedWall.speed = difficulty.Get(difficulty.speed) * speedupScale;
+            //spawnedWall.speed *= speedupScale;
         }
     }
 
     public void DecreaseCurrentSpeed()
     {
+        boosting = false;
         if (spawnedWall != null)
         {
-            boosting = false;
-            spawnedWall.speed = difficulty.GetAsInt(difficulty.speed); //GetCurrentWallSpeed();
+            spawnedWall.speed = difficulty.GetAsInt(difficulty.speed);
         }
     }
 
@@ -153,9 +154,9 @@ public class WallController : MonoBehaviour
         spawnedWall.initialPosition = startingPoint;
         spawnedWall.minZ = transform.position.z;
         spawnedWall.player = player;
-        spawnedWall.score = difficulty.GetAsInt(difficulty.pointsPerWall); //GetCurrentDifficulty().pointsPerSuccess;
+        spawnedWall.score = difficulty.GetAsInt(difficulty.pointsPerWall);
         spawnedWall.wallController = this;
-        spawnedWall.speed = difficulty.Get(difficulty.speed); //GetCurrentWallSpeed();
+        spawnedWall.speed = difficulty.Get(difficulty.speed);
         spawnedWall.wallCollisionSpeed = wallCollisionSpeed;
         spawnedWall.Activate();
     }

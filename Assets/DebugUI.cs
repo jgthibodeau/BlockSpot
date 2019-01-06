@@ -30,6 +30,9 @@ public class DebugUI : MonoBehaviour
         if (active)
         {
             Activate();
+        } else
+        {
+            Deactivate();
         }
 
         fpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
