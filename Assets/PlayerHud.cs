@@ -28,7 +28,7 @@ public class PlayerHud : MonoBehaviour
     private WallController wallController;
 
     private int currentScore;
-    private int currentMultiplier;
+    private int currentCombo;
     private int currentLevel;
     private int currentMistakes;
     private int currentWallsHit;
@@ -40,7 +40,7 @@ public class PlayerHud : MonoBehaviour
         wallController = player.wallController;
 
         UpdateScore();
-        UpdateMultiplier();
+        UpdateCombo();
         UpdateLevel();
         UpdateLevelProgress();
         UpdateMistakes();
@@ -53,9 +53,9 @@ public class PlayerHud : MonoBehaviour
         {
             UpdateScore();
         }
-        if (wallController.currentMultiplier != currentMultiplier)
+        if (wallController.currentCombo != currentCombo)
         {
-            UpdateMultiplier();
+            UpdateCombo();
         }
         if (currentLevel != wallController.difficulty.CurrentLevel())
         {
@@ -77,10 +77,10 @@ public class PlayerHud : MonoBehaviour
         scoreText.SetText(scorePrefix + Util.FormatNumber(currentScore));
     }
 
-    void UpdateMultiplier()
+    void UpdateCombo()
     {
-        currentMultiplier = wallController.currentMultiplier;
-        multiplierText.SetText(multiplierPrefix + currentMultiplier);
+        currentCombo = wallController.currentCombo;
+        multiplierText.SetText(multiplierPrefix + currentCombo);
     }
 
     void UpdateLevel()

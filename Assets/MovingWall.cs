@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingWall : MonoBehaviour
 {
+    public GameObject baseGraphics;
     public WallController wallController;
 
     public float speed;
@@ -51,6 +52,7 @@ public class MovingWall : MonoBehaviour
                 transform.position = newPosition;
 
                 TriggerColliders();
+                baseGraphics.SetActive(false);
             } else
             {
                 transform.position = newPosition;

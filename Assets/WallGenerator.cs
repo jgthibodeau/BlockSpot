@@ -32,7 +32,7 @@ public class WallGenerator : MonoBehaviour
         return minPosition + column * blockSize;
     }
 
-    public MovingWall CreateWall(WallBlock.WallType requiredType, int requiredCount, int randomCount)
+    public MovingWall CreateWall(Player player, int requiredCount, int randomCount)
     {
         //keep values bounded
         if (requiredCount + randomCount >= wallPieceCount)
@@ -51,14 +51,11 @@ public class WallGenerator : MonoBehaviour
         }
 
         //create parent wall object
-        //GameObject wall = new GameObject("wall");
-        //wall.transform.parent = transform;
-        //MovingWall movingWall = wall.AddComponent<MovingWall>();
         GameObject wall = GameObject.Instantiate(baseMovingWall, transform);
         MovingWall movingWall = wall.GetComponent<MovingWall>();
 
         //generate list of wall pieces
-        WallBlock[] wallBlocks = GenerateWallBlocks(wall.transform, requiredType, requiredCount, randomCount);
+        WallBlock[] wallBlocks = GenerateWallBlocks(wall.transform, player, requiredCount, randomCount);
         movingWall.wallBlocks = wallBlocks;
 
         //place and rotate each wall piece
@@ -76,25 +73,21 @@ public class WallGenerator : MonoBehaviour
                 GameObject wallBlock = wallBlocks[i * wallSize + j].gameObject;
 
                 wallBlock.transform.localPosition = new Vector3(CalcPosition(i), CalcPosition(j), 0);
-
-                int z = Random.Range(0, 4);
-                z *= 90;
-                wallBlock.transform.eulerAngles = new Vector3(0, 0, z);
             }
         }
     }
 
-    private WallBlock[] GenerateWallBlocks(Transform wall, WallBlock.WallType requiredType, int requiredCount, int randomCount)
+    private WallBlock[] GenerateWallBlocks(Transform wall, Player player, int requiredCount, int randomCount)
     {
         WallBlock[] wallBlocks = new WallBlock[wallPieceCount];
         int pieceIndex = 0;
         for (; pieceIndex < requiredCount; pieceIndex++)
         {
-            wallBlocks[pieceIndex] = CreateWallBlock(wall, requiredType);
+            wallBlocks[pieceIndex] = CreateWallBlock(wall, player.currentType, GetRandomRotation(player));
         }
         for (; pieceIndex < randomCount; pieceIndex++)
         {
-            wallBlocks[pieceIndex] = CreateRandomWallBlock(wall, requiredType);
+            wallBlocks[pieceIndex] = CreateRandomWallBlock(wall, player.currentType, GetRandomRotation());
         }
         for (; pieceIndex < wallPieceCount; pieceIndex++)
         {
@@ -104,14 +97,36 @@ public class WallGenerator : MonoBehaviour
         return Util.Randomize<WallBlock>(wallBlocks);
     }
 
-    private WallBlock CreateWallBlock(Transform wall, WallBlock.WallType wallType)
+    private float GetRandomRotation()
+    {
+        return 90 * Random.Range(0, 4);
+    }
+
+    private float GetRandomRotation(Player player)
+    {
+        float rotation = player.blockController.GetAdjustedDesiredAngle();
+        rotation += 90 * Random.Range(-1, 2);
+        if (rotation > 360)
+        {
+            rotation -= 360;
+        }
+        if (rotation < 0)
+        {
+            rotation += 360;
+        }
+        return rotation;
+    }
+
+    private WallBlock CreateWallBlock(Transform wall, WallBlock.WallType wallType, float rotation)
     {
         GameObject go;
         wallComponentDictionary.TryGetValue(wallType, out go);
-        return GameObject.Instantiate(go, wall).GetComponent<WallBlock>();
+        GameObject wallBlock = GameObject.Instantiate(go, wall);
+        wallBlock.transform.eulerAngles = new Vector3(0, 0, rotation);
+        return wallBlock.GetComponent<WallBlock>(); 
     }
 
-    private WallBlock CreateRandomWallBlock(Transform wall, WallBlock.WallType ignoreWallType)
+    private WallBlock CreateRandomWallBlock(Transform wall, WallBlock.WallType ignoreWallType, float rotation)
     {
         WallBlock.WallType wallType;
         do
@@ -119,6 +134,6 @@ public class WallGenerator : MonoBehaviour
             wallType = Util.RandomEnumValue<WallBlock.WallType>(WallBlock.WallType.NONE);
         } while (wallType == ignoreWallType);
         
-        return CreateWallBlock(wall, wallType);
+        return CreateWallBlock(wall, wallType, rotation);
     }
 }

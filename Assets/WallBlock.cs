@@ -11,11 +11,12 @@ public class WallBlock : MonoBehaviour
     public WallFailure wallFailure;
 
     public GameObject defaultBlocks;
-    //MeshRenderer[] children;
 
     public List<Transform> rotatableChildren;
     public Transform rotatableGrandChildren;
     public Transform hiddenGrandChildren;
+
+    private float hitAccuracy = 0;
 
     public bool Is90DegreeRotationValid()
     {
@@ -34,7 +35,6 @@ public class WallBlock : MonoBehaviour
     {
         wallSuccesses = GetComponentsInChildren<WallSuccess>();
         wallFailure = GetComponentInChildren<WallFailure>();
-        //children = transform.GetComponentsInChildren<MeshRenderer>();
     }
 
     public void Explode()
@@ -51,52 +51,25 @@ public class WallBlock : MonoBehaviour
     private float explodeLineScaleSpeed = 0.5f;
     private IEnumerator DoExplosion()
     {
-        //foreach (Transform t in rotatableChildren)
-        //{
-        //    TryHideObject(t);
-        //}
         hiddenGrandChildren.gameObject.SetActive(false);
-        //yield return null;
-
-        //int i = 0;
-        //foreach (Transform t in rotatableGrandChildren.transform)
-        //{
-        //    if (t.parent == rotatableGrandChildren)
-        //    {
-        //        TryHideObject(t);
-        //    }
-        //    //if (i % 100 == 0)
-        //    //{
-        //    //    yield return null;
-        //    //}
-        //    //i++;
-        //}
-        //yield return null;
 
         rotatableGrandChildren.gameObject.SetActive(true);
         Vector3 rotation = transform.eulerAngles;
         while (true)
         {
             rotation.z += explodeRotateSpeed * Time.deltaTime;
-            //transform.eulerAngles = rotation;
 
             foreach (Transform t in rotatableChildren)
             {
                 RotateObject(t, rotation, true);
             }
-
-            //i = 0;
+            
             foreach (Transform t in rotatableGrandChildren.transform)
             {
                 if (t.parent == rotatableGrandChildren)
                 {
                     RotateObject(t, rotation, false);
                 }
-                //if (i % 100 == 0)
-                //{
-                //    yield return null;
-                //}
-                //i++;
             }
 
             yield return null;
@@ -113,11 +86,6 @@ public class WallBlock : MonoBehaviour
 
     private void RotateObject(Transform t, Vector3 rotation, bool isLineRenderer)
     {
-        //Vector3 newPosition = t.position;
-        //newPosition += (t.position - transform.position) * explodeSpeed * Time.deltaTime;
-        //newPosition.z = 0;
-        //t.position = newPosition;
-
         t.eulerAngles = rotation;
 
         float newScale = t.localScale.x;
@@ -153,51 +121,62 @@ public class WallBlock : MonoBehaviour
     {
         if (!wall.alreadyHit && IsSuccessfulHit(player))
         {
-            //Success(player, wall);
             wall.Hit();
-            player.HitGoal();
-        } //else if (wallFailure.ContainsPlayer())
-        //{
-            //Fail(player, wall);
-        //}
+            player.HitGoal(hitAccuracy);
+        }
         Explode();
     }
 
     private bool IsSuccessfulHit(Player player)
     {
-        bool allSuccess = true;
+        //bool allSuccess = true;
+        //if (wallSuccesses.Length > 0)
+        //{
+        //    foreach (WallSuccess wallSuccess in wallSuccesses)
+        //    {
+        //        if (!wallSuccess.ContainsPlayer())
+        //        {
+        //            allSuccess = false;
+        //            break;
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    allSuccess = false;
+        //}
+        hitAccuracy = 0;
         if (wallSuccesses.Length > 0)
         {
             foreach (WallSuccess wallSuccess in wallSuccesses)
             {
-                if (!wallSuccess.ContainsPlayer())
+                if (wallSuccess.ContainsPlayer())
                 {
-                    allSuccess = false;
-                    break;
+                    hitAccuracy++;
                 }
             }
         }
-        else
-        {
-            allSuccess = false;
-        }
+        hitAccuracy /= wallSuccesses.Length;
 
-        if (allSuccess)
+        if (hitAccuracy > 0 && IsValidAngle(player)) {
+            return true;
+        } else
         {
-            return IsValidAngle(player);
+            hitAccuracy = 0;
+            return false;
         }
-
-        return false;
     }
 
     bool IsValidAngle(Player player)
     {
+        Debug.Log("checking angle " + wallType + " " + player.currentType + " " + player.blockController.GetAdjustedDesiredAngle() + " " + transform.eulerAngles.z);
+
         if (wallType != player.currentType)
         {
             return false;
         }
 
-        float angleDifference = player.blockController.desiredAngle - transform.eulerAngles.z;
+        int angleDifference = (int)player.blockController.GetAdjustedDesiredAngle() - (int)transform.eulerAngles.z;
         if (angleDifference < 0)
         {
             angleDifference += 360;
@@ -208,28 +187,4 @@ public class WallBlock : MonoBehaviour
             || (Mathf.Approximately(angleDifference, 180) && Is180DegreeRotationValid())
             || (Mathf.Approximately(angleDifference, 270) && Is90DegreeRotationValid());
     }
-
-    //private void Success(Player player, MovingWall wall)
-    //{
-    //    Explode();
-
-    //    if (!wall.alreadyHit)
-    //    {
-    //        //wall.Explode();
-    //        wall.Hit();
-    //        player.HitGoal();
-    //    }
-    //}
-
-    //public void Fail(Player player, MovingWall wall)
-    //{
-    //    Explode();
-
-    //    if (!wall.alreadyHit)
-    //    {
-    //        //wall.Explode();
-    //        wall.Hit();
-    //        player.HitWall();
-    //    }
-    //}
 }

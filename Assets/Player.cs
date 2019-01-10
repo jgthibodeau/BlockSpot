@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     public int maxMistakes;
     public int remainingMistakes;
     public int score;
+    public int wallsHit;
+    public int goalsHit;
+    public float accuracy;
 
     public float moveSensitivity;
     public float minX, maxX, minY, maxY;
@@ -46,6 +49,8 @@ public class Player : MonoBehaviour
     public Vector3 gyroDeadzone = new Vector3(0.01f, 0.01f, 0.01f);
     public float rotateSpeed = 8;
     public bool invertRotation = false;
+    public bool invertGyroX = false;
+    public bool invertGyroY = false;
 
     public bool doubleClickFreeze, doubleClickReset;
     private bool freezeGyro;
@@ -133,6 +138,8 @@ public class Player : MonoBehaviour
     void UpdateInversion()
     {
         invertRotation = PlayerPrefs.GetInt(Options.INVERT_ROTATION) == 1;
+        invertGyroX = PlayerPrefs.GetInt(Options.INVERT_GYRO_X) == 1;
+        invertGyroY = PlayerPrefs.GetInt(Options.INVERT_GYRO_Y) == 1;
     }
     void UpdateGyroSensitivity()
     {
@@ -141,6 +148,13 @@ public class Player : MonoBehaviour
         gyroCalibration.x = PlayerPrefs.GetFloat(Options.GYRO_CALIBRATION + 'x');
         gyroCalibration.y = PlayerPrefs.GetFloat(Options.GYRO_CALIBRATION + 'y');
         gyroCalibration.z = PlayerPrefs.GetFloat(Options.GYRO_CALIBRATION + 'z');
+
+        swipeSensitivity = PlayerPrefs.GetFloat(Options.ROTATE_SENSITIVITY);
+
+        if (invertRotation)
+        {
+            swipeSensitivity *= -1;
+        }
     }
 
     public void AddMistake()
@@ -179,10 +193,14 @@ public class Player : MonoBehaviour
 
         //RotatePlayer();
 
-        SwipeMove();
-        RotateWorld();
+        //SwipeMove();
+        //RotateWorld();
+        //GyroMove();
+        //JoystickMove();
+        
         GyroMove();
         JoystickMove();
+        SwipeRotate();
 
         AdjustSpeed();
     }
@@ -267,7 +285,7 @@ public class Player : MonoBehaviour
         {
             angleAdjustAmount *= -1;
         }
-        float desiredAngle = blockController.desiredAngle + angleAdjustAmount;
+        float desiredAngle = blockController.GetAdjustedDesiredAngle() + angleAdjustAmount;
         if (desiredAngle < 0)
         {
             desiredAngle += 360;
@@ -277,44 +295,51 @@ public class Player : MonoBehaviour
             desiredAngle -= 360;
         }
         rotateClipDetail.Play(audioSource);
-        blockController.desiredAngle = desiredAngle;
+        blockController.SetDesiredAngle(desiredAngle);
     }
 
     void StartBoost()
     {
-        //freezeGyro = true;
-        boostClipDetail.Play(audioSource);
-        boostParticles.Play();
-        wallController.IncreaseCurrentSpeed();
+        if (!wallController.boosting)
+        {
+            //freezeGyro = true;
+            boostClipDetail.Play(audioSource);
+            boostParticles.Play();
+            wallController.IncreaseCurrentSpeed();
+        }
     }
 
     void StopBoost()
     {
-        //freezeGyro = false;
-        wallController.DecreaseCurrentSpeed();
+        if (wallController.boosting)
+        {
+            //freezeGyro = false;
+            wallController.DecreaseCurrentSpeed();
+        }
     }
 
     private Vector2 swipeStart = Vector2.zero;
     private Vector2 swipeMove = Vector2.zero;
     public bool swiping = false;
-    private string Touchpad = "Touchpad";
+    private string touchpad = "Touchpad";
     public float doubleTapTime = 0.5f;
     private float firstTapTime;
     void SwipeMove()
     {
-        ETouchPhase touchPhase = TCKInput.GetTouchPhase(Touchpad);
-        switch(touchPhase)
+        ETouchPhase touchPhase = TCKInput.GetTouchPhase(touchpad);
+        switch (touchPhase)
         {
             case ETouchPhase.Began:
                 if (Time.time - firstTapTime <= doubleTapTime)
                 {
                     swiping = false;
                     StartBoost();
-                } else
+                }
+                else
                 {
                     firstTapTime = Time.time;
                     swiping = true;
-                    swipeStart = TCKInput.GetAxis(Touchpad);
+                    swipeStart = TCKInput.GetAxis(touchpad);
                     swipeMove = swipeStart;
                 }
 
@@ -322,14 +347,14 @@ public class Player : MonoBehaviour
             case ETouchPhase.Stationary:
                 if (swiping)
                 {
-                    swipeStart = TCKInput.GetAxis(Touchpad);
+                    swipeStart = TCKInput.GetAxis(touchpad);
                     swipeMove = swipeStart;
                 }
                 break;
             case ETouchPhase.Moved:
                 if (swiping)
                 {
-                    swipeMove = TCKInput.GetAxis(Touchpad);
+                    swipeMove = TCKInput.GetAxis(touchpad);
                     HandleSwipe();
                 }
                 break;
@@ -338,6 +363,78 @@ public class Player : MonoBehaviour
                 //StopBoost();
                 break;
         }
+    }
+
+    public string leftTouchPad = "left";
+    public string rightTouchPad = "right";
+    private Vector2 leftSwipeStart, rightSwipeStart;
+    public float swipeSensitivity = 5;
+    private bool leftSwiping, rightSwiping;
+    private float firstLeftTapTime, firstRightTapTime;
+    void SwipeRotate()
+    {
+        ETouchPhase leftTouchPhase = TCKInput.GetTouchPhase(leftTouchPad);
+        switch (leftTouchPhase)
+        {
+            case ETouchPhase.Began:
+            case ETouchPhase.Stationary:
+            case ETouchPhase.Moved:
+                if (!leftSwiping)
+                {
+                    if (Time.time - firstLeftTapTime <= doubleTapTime)
+                    {
+                        StartBoost();
+                    }
+                    else
+                    {
+                        firstLeftTapTime = Time.time;
+                    }
+                }
+
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + TCKInput.GetAxis(leftTouchPad).y * swipeSensitivity);
+                leftSwiping = true;
+                break;
+            case ETouchPhase.Ended:
+            case ETouchPhase.NoTouch:
+                leftSwiping = false;
+                break;
+        }
+        ETouchPhase rightTouchPhase = TCKInput.GetTouchPhase(rightTouchPad);
+        switch (rightTouchPhase)
+        {
+            case ETouchPhase.Began:
+            case ETouchPhase.Stationary:
+            case ETouchPhase.Moved:
+                if (!rightSwiping)
+                {
+                    if (Time.time - firstRightTapTime <= doubleTapTime)
+                    {
+                        StartBoost();
+                    }
+                    else
+                    {
+                        firstRightTapTime = Time.time;
+                    }
+                }
+
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + TCKInput.GetAxis(rightTouchPad).y * swipeSensitivity);
+                rightSwiping = true;
+                break;
+            case ETouchPhase.Ended:
+            case ETouchPhase.NoTouch:
+                rightSwiping = false;
+                break;
+        }
+
+        if (!leftSwiping && !rightSwiping)
+        {
+            HandleSwipeEnd();
+        }
+    }
+
+    void HandleSwipeEnd()
+    {
+        blockController.LockInAngle();
     }
 
     public float swipeDistance;
@@ -383,10 +480,15 @@ public class Player : MonoBehaviour
 
     void GyroMove()
     {
+        Vector3 desiredPosition;
         bool resetGyro = TCKInput.GetAction("Recenter", EActionEvent.Down) || (doubleClickReset && TCKInput.GetAction("Left", EActionEvent.Press) && TCKInput.GetAction("Right", EActionEvent.Press));
         if (resetGyro)
         {
             ResetGyro();
+
+            desiredPosition = new Vector3(0, 0, blockController.blockHolder.transform.position.z);
+            blockController.desiredPosition = desiredPosition;
+            gyroVector = Vector3.zero;
         }
 
         bool updateGyro = !doubleClickFreeze || !(TCKInput.GetAction("Left", EActionEvent.Press) && TCKInput.GetAction("Right", EActionEvent.Press));
@@ -403,48 +505,63 @@ public class Player : MonoBehaviour
             }
             if (Mathf.Abs(gyroInput.x) > gyroDeadzone.x)
             {
-                gyroVector.x += gyroInput.x * sensitivity;
+                if (invertGyroX)
+                {
+                    gyroVector.x = - gyroInput.x * sensitivity;
+                } else
+                {
+                    gyroVector.x = gyroInput.x * sensitivity;
+                }
             }
             if (Mathf.Abs(gyroInput.y) > gyroDeadzone.y)
             {
-                gyroVector.y += gyroInput.y * sensitivity;
+                if (invertGyroY)
+                {
+                    gyroVector.y = - gyroInput.y * sensitivity;
+                }
+                else
+                {
+                    gyroVector.y = gyroInput.y * sensitivity;
+                }
             }
             if (Mathf.Abs(gyroInput.z) > gyroDeadzone.z)
             {
-                gyroVector.z += gyroInput.z * sensitivity;
+                gyroVector.z = gyroInput.z * sensitivity;
             }
         }
         
         float x = -gyroVector.y;
         float y = gyroVector.x;
 
-        if (compensateForPlayerRotation)
-        {
-            float desiredAngle = blockController.desiredAngle;
-            if (Mathf.Approximately(desiredAngle, 0))
-            {
-                ;
-            }
-            else if (Mathf.Approximately(desiredAngle, 90))
-            {
-                float tempY = y;
-                y = x;
-                x = -tempY;
-            }
-            else if (Mathf.Approximately(desiredAngle, 180))
-            {
-                y = -y;
-                x = -x;
-            }
-            else if (Mathf.Approximately(desiredAngle, 270))
-            {
-                float tempY = y;
-                y = -x;
-                x = tempY;
-            }
-        }
+        //if (compensateForPlayerRotation)
+        //{
+        //    float desiredAngle = blockController.desiredAngle;
+        //    if (Mathf.Approximately(desiredAngle, 0))
+        //    {
+        //        ;
+        //    }
+        //    else if (Mathf.Approximately(desiredAngle, 90))
+        //    {
+        //        float tempY = y;
+        //        y = x;
+        //        x = -tempY;
+        //    }
+        //    else if (Mathf.Approximately(desiredAngle, 180))
+        //    {
+        //        y = -y;
+        //        x = -x;
+        //    }
+        //    else if (Mathf.Approximately(desiredAngle, 270))
+        //    {
+        //        float tempY = y;
+        //        y = -x;
+        //        x = tempY;
+        //    }
+        //}
 
-        Vector3 desiredPosition = new Vector3(x, y, transform.position.z);
+        //Vector3 desiredPosition = new Vector3(x, y, transform.position.z);
+
+        desiredPosition = blockController.blockHolder.transform.position + blockController.blockHolder.transform.up * y + blockController.blockHolder.transform.right * x;
 
         desiredPosition.x = Mathf.Clamp(desiredPosition.x, minX, maxX);
         desiredPosition.y = Mathf.Clamp(desiredPosition.y, minY, maxY);
@@ -461,6 +578,9 @@ public class Player : MonoBehaviour
         failureClipDetail.Play(audioSource);
         screenShake.Shake(failureShakeDuration, failureShakeAmount);
 
+        AddAccuracy(0);
+        wallsHit++;
+
         if (!invincible)
         {
             remainingMistakes--;
@@ -468,7 +588,7 @@ public class Player : MonoBehaviour
 
         if (remainingMistakes > 0)
         {
-            wallController.HitWall(false, this);
+            wallController.HitWall(false, 0, this);
             StopBoost();
         } else
         {
@@ -477,16 +597,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void HitGoal()
+    public void HitGoal(float hitAccuracy)
     {
+        AddAccuracy(hitAccuracy);
+        goalsHit++;
+
         if (remainingMistakes < maxMistakes)
         {
             remainingMistakes++;
         }
         successClipDetail.Play(audioSource);
         SwitchShape();
-        wallController.HitWall(true, this);
+        wallController.HitWall(true, hitAccuracy, this);
         StopBoost();
+    }
+
+    public int TotalWallCount()
+    {
+        return wallsHit + goalsHit;
+    }
+
+    //TODO check this math
+    public void AddAccuracy(float hitAccuracy)
+    {
+        accuracy = (accuracy * TotalWallCount() + hitAccuracy) / (TotalWallCount() + 1);
     }
 
     void AdjustSpeed()

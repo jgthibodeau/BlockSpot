@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
         if (!playerDead)
         {
             playerDead = true;
-            menuController.GameOver(player.score);
+            menuController.GameOver(player);
         }
     }
 

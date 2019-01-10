@@ -93,6 +93,11 @@ public class Util : MonoBehaviour {
         return string.Format("{0:n0}", number);
     }
 
+    public static int FormatPercentage(float number)
+    {
+        return Mathf.RoundToInt(number * 100);
+    }
+
     public static bool CanSpawn(Vector3 position, float radius, float height, LayerMask layer)
     {
         Collider[] colliders = Physics.OverlapCapsule(position - Vector3.up * height, position + Vector3.up * height, radius, layer);

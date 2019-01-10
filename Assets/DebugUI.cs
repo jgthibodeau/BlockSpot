@@ -9,6 +9,9 @@ public class DebugUI : MonoBehaviour
 
     public TMPro.TMP_Text fpsText;
     public TMPro.TMP_Text speedText;
+    public TMPro.TMP_Text scoreText;
+    public TMPro.TMP_Text accuracyText;
+    public TMPro.TMP_Text multiplierText;
     public TMPro.TMP_Text randomTilesText;
     public TMPro.TMP_Text randomTileChanceText;
     public TMPro.TMP_Text nextTilesText;
@@ -57,6 +60,9 @@ public class DebugUI : MonoBehaviour
         }
 
         speedText.text = string.Format("{0}", wallController.difficulty.Get(wallController.difficulty.speed));
+        scoreText.text = string.Format("{0}", wallController.difficulty.Get(wallController.difficulty.pointsPerWall));
+        accuracyText.text = string.Format("{0}%", player.accuracy*100);
+        multiplierText.text = string.Format("{0}", wallController.GetCurrentMultiplier());
         randomTilesText.text = string.Format("{0}", wallController.difficulty.Get(wallController.difficulty.maxRandomTiles));
         randomTileChanceText.text = string.Format("{0}", wallController.difficulty.Get(wallController.difficulty.chanceForRandomTiles));
         levelProgressText.text = string.Format("{0}/{1}", wallController.currentWallsHit, wallController.difficulty.Get(wallController.difficulty.wallsTillNextLevel));

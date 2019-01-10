@@ -12,7 +12,7 @@ public class BlockController : MonoBehaviour
     private Vector3 moveDirection;
     
     public float rotationSpeed;
-    public float desiredAngle;
+    private float desiredAngle;
     public float minAngleDifference = 0.1f;
 
     public GameObject blockHolder;
@@ -30,6 +30,54 @@ public class BlockController : MonoBehaviour
         Move();
 
         Rotate();
+    }
+
+    public void SetDesiredAngle(float angle)
+    {
+        while (angle < 0)
+        {
+            angle += 360;
+        }
+        while (angle >= 360)
+        {
+            angle -= 360;
+        }
+
+        desiredAngle = angle;
+    }
+
+    public float GetDesiredAngleRaw()
+    {
+        return desiredAngle;
+    }
+
+    public float GetAdjustedDesiredAngle()
+    {
+        float adjustedAngle = 0;
+
+        if (desiredAngle < 45 || desiredAngle > 315)
+        {
+            adjustedAngle = 0;
+        }
+        else if (desiredAngle > 45 && desiredAngle < 135)
+        {
+            adjustedAngle = 90;
+        }
+        else if (desiredAngle > 135 && desiredAngle < 225)
+        {
+            adjustedAngle = 180;
+        }
+        else if (desiredAngle > 225)
+        {
+            adjustedAngle = 270;
+        }
+
+        return adjustedAngle;
+    }
+
+    public void LockInAngle()
+    {
+        desiredAngle = GetAdjustedDesiredAngle();
     }
 
     private void Move()

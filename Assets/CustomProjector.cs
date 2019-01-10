@@ -10,7 +10,7 @@ public class CustomProjector : MonoBehaviour
     public LayerMask layers;
     public GameObject shadowObject;
     
-    void Update()
+    void LateUpdate()
     {
         RaycastHit hitInfo;
         if(Physics.Raycast(transform.position, transform.forward, out hitInfo, maxDistance, layers))

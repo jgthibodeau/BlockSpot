@@ -26,7 +26,9 @@ public class WallController : MonoBehaviour
 
     public Transform startingPoint;
 
-    public int maxMultiplier, currentMultiplier;
+    public int maxCombo = 10;
+    public int currentCombo = 0;
+    public int multiplierPerCombo = 1;
 
     private MovingWall spawnedWall;
 
@@ -41,17 +43,17 @@ public class WallController : MonoBehaviour
         difficulty = GetComponent<Difficulty>();
         player = myGameManager.GetPlayer();
         difficulty.SetDifficulty(PlayerPrefs.GetInt(Options.STARTING_LEVEL, 0));
-        currentMultiplier = 1;
+        currentCombo = 0;
 
         StartCoroutine(InitialWall());
     }
 
-    public void HitWall(bool success, Player player)
+    public void HitWall(bool success, float hitAccuracy, Player player)
     {
         int previousDifficulty = difficulty.CurrentLevel();
         if (success)
         {
-            HandleSuccessfulHit(player);
+            HandleSuccessfulHit(player, hitAccuracy);
         } else
         {
             HandleFailedHit();
@@ -83,20 +85,37 @@ public class WallController : MonoBehaviour
         CreateWall();
     }
 
-    private void HandleSuccessfulHit(Player player)
+    public int GetCurrentMultiplier()
     {
-        int newScore = difficulty.GetAsInt(difficulty.pointsPerWall) * currentMultiplier;
+        if (currentCombo == 0)
+        {
+            return 1;
+        }
+        return currentCombo * multiplierPerCombo;
+    }
+
+    private void HandleSuccessfulHit(Player player, float hitAccuracy)
+    {
+        int newScore = difficulty.GetAsInt(difficulty.pointsPerWall) ;
+        //multiply by combo
+        if (currentCombo > 0)
+        {
+            newScore *= GetCurrentMultiplier();
+        }
+        //multiply if boosting
         if (boosting)
         {
             newScore *= speedupScoreScale;
         }
+        //multiply by accuracy
+        newScore = (int)(newScore * hitAccuracy);
         player.score += newScore;
 
         //TODO show scoreObject
 
-        if (currentMultiplier < maxMultiplier)
+        if (currentCombo < maxCombo)
         {
-            currentMultiplier++;
+            currentCombo++;
         }
 
         currentWallsHit++;
@@ -109,7 +128,7 @@ public class WallController : MonoBehaviour
 
     private void HandleFailedHit()
     {
-        currentMultiplier = 1;
+        currentCombo = 0;
     }
 
     public void IncreaseCurrentSpeed()
@@ -150,7 +169,7 @@ public class WallController : MonoBehaviour
             }
         }
 
-        spawnedWall = wallGenerator.CreateWall(player.currentType, 1, randomWallCount);
+        spawnedWall = wallGenerator.CreateWall(player, 1, randomWallCount);
         spawnedWall.initialPosition = startingPoint;
         spawnedWall.minZ = transform.position.z;
         spawnedWall.player = player;
