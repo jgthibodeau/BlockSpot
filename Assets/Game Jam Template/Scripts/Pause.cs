@@ -24,7 +24,7 @@ public class Pause : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        bool pauseTriggered = Util.GetButtonDown("Pause") || TCKInput.GetAction("Pause", EActionEvent.Down);
+        bool pauseTriggered = /*Util.GetButtonDown("Pause") || */TCKInput.GetAction("Pause", EActionEvent.Down);
 
         if (pauseTriggered)
         {

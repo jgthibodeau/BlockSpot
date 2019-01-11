@@ -6,11 +6,15 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
-    private AdController adController;
+    private TokenController tokenController;
     private ShowPanels showPanels;
     private StartOptions startOptions;
     public static MenuController instance = null;
     public Menu gameOverMenu;
+
+    public GameObject newGameNoAdButton;
+    public GameObject newGameWithAdButton;
+
     public Menu startMenu;
     public TMPro.TMP_Text scoreText;
 
@@ -21,7 +25,7 @@ public class MenuController : MonoBehaviour
             instance = this;
             showPanels = GetComponentInChildren<ShowPanels>();
             startOptions = GetComponentInChildren<StartOptions>();
-            adController = AdController.instance;
+            tokenController = TokenController.instance;
         }
         else if (instance != this)
         {
@@ -51,35 +55,41 @@ public class MenuController : MonoBehaviour
         string displayText = "";
         if (p.score > highScore)
         {
-            displayText = newHighScorePrefix + " " + currentScoreString + "\n\n";
+            displayText = string.Format(newHighScorePrefix, currentScoreString);
             //displayText += prevHighScorePrefix + " " + highScoreString + "\n\n";
-            displayText += accuracyPrefix + " " + accuracyString;
+            displayText += string.Format(accuracyPrefix, accuracyString);
             PlayerPrefs.SetInt(HIGH_SCORE, p.score);
+
+            //newGameNoAdButton.SetActive(true);
+            //newGameWithAdButton.SetActive(false);
+
+            tokenController.AddToken();
         } else
         {
-            displayText = currentHighScorePrefix + " " + highScoreString + "\n\n";
-            displayText += playerScorePrefix + " " + currentScoreString + "\n\n";
-            displayText += accuracyPrefix + " " + accuracyString;
+            displayText = string.Format(currentHighScorePrefix, highScoreString);
+            displayText += string.Format(playerScorePrefix, currentScoreString);
+            displayText += string.Format(accuracyPrefix, accuracyString);
+
+            //newGameNoAdButton.SetActive(false);
+            //newGameWithAdButton.SetActive(true);
         }
         scoreText.text = displayText;
 
         Debug.Log("GAME OVER");
         showPanels.Show(gameOverMenu);
     }
+    
+    //public void Restart()
+    //{
+    //    //afterAd = showPanels.Show(startMenu);
 
-    //bool playedOnce = false;
-    public AdController.AfterAdDelegate afterAd; // This is the variable holding the method you're going to call.
-    public void Restart()
-    {
-        //afterAd = showPanels.Show(startMenu);
-
-        //if (playedOnce)
-        //{
-            adController.ShowRewardedAd(startMenu);
-        //} else
-        //{
-        //    playedOnce = true;
-        //    afterAd();
-        //}
-    }
+    //    //if (playedOnce)
+    //    //{
+    //        adController.ShowRewardedAd(startMenu);
+    //    //} else
+    //    //{
+    //    //    playedOnce = true;
+    //    //    afterAd();
+    //    //}
+    //}
 }

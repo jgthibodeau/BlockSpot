@@ -45,7 +45,7 @@ public class AudioBlocks : MonoBehaviour
             Vector2 randomPos = GetRandomPos();
             float x = (randomPos.x + 0.5f) * blockWidth;
             float y = (randomPos.y + 0.5f) * blockHeight;
-            newBlock.transform.localPosition = new Vector3(x, -0.1f, y);
+            newBlock.transform.localPosition = new Vector3(x, 0.1f, y);
             blocks.Add(newBlock);
         }
     }
@@ -74,7 +74,9 @@ public class AudioBlocks : MonoBehaviour
 
         return randomPos;
     }
-    
+
+    public float minScale = 0.1f;
+
     void Update()
     {
         for(int i=0; i<numberCubes; i++)
@@ -95,6 +97,10 @@ public class AudioBlocks : MonoBehaviour
             newScale.x = originalBlockWidth;
             newScale.z = originalBlockHeight;
             newScale.y = Mathf.Lerp(newScale.y, spectrumValue, scaleSpeed * Time.deltaTime);
+            if (newScale.y < minScale)
+            {
+                newScale.y = minScale;
+            }
             blocks[i].transform.localScale = newScale;
         }
     }

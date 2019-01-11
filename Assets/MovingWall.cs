@@ -71,11 +71,16 @@ public class MovingWall : MonoBehaviour
         {
             block.TriggerColliders(this, player);
         }
-        if (!alreadyHit)
+        bool success = alreadyHit;
+        if (!success)
         {
-            //Explode();
             Hit();
             player.HitWall();
+        }
+
+        foreach (WallBlock block in wallBlocks)
+        {
+            block.Explode(success);
         }
     }
 
@@ -99,15 +104,15 @@ public class MovingWall : MonoBehaviour
         }
     }
 
-    public void Explode()
-    {
-        WallBlock[] wallBlocks = gameObject.GetComponentsInChildren<WallBlock>();
+    //public void Explode()
+    //{
+    //    WallBlock[] wallBlocks = gameObject.GetComponentsInChildren<WallBlock>();
 
-        foreach(WallBlock wallBlock in wallBlocks)
-        {
-            wallBlock.Explode();
-        }
-    }
+    //    foreach(WallBlock wallBlock in wallBlocks)
+    //    {
+    //        wallBlock.Explode();
+    //    }
+    //}
 
     public void Hit()
     {

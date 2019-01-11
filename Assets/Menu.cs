@@ -37,4 +37,9 @@ public class Menu : MonoBehaviour {
 	public void Hide(){
         menuItem.SetActive (false);
 	}
+
+    public bool IsVisible()
+    {
+        return menuItem.activeSelf;
+    }
 }

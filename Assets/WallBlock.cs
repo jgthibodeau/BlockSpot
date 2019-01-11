@@ -10,11 +10,11 @@ public class WallBlock : MonoBehaviour
     public WallSuccess[] wallSuccesses;
     public WallFailure wallFailure;
 
-    public GameObject defaultBlocks;
-
     public List<Transform> rotatableChildren;
-    public Transform rotatableGrandChildren;
     public Transform hiddenGrandChildren;
+
+    public Transform rotatableSuccessExplosion;
+    public Transform rotatableFailExplosion;
 
     private float hitAccuracy = 0;
 
@@ -37,21 +37,23 @@ public class WallBlock : MonoBehaviour
         wallFailure = GetComponentInChildren<WallFailure>();
     }
 
-    public void Explode()
+    public void Explode(bool success)
     {
         Vector3 position = transform.position;
         position.z -= 0.001f;
         transform.position = position;
-        StartCoroutine(DoExplosion());
+        StartCoroutine(DoExplosion(success));
     }
 
     private float explodeSpeed = 5;
     private float explodeRotateSpeed = 250;
     private float explodeScaleSpeed = 3f;
     private float explodeLineScaleSpeed = 0.5f;
-    private IEnumerator DoExplosion()
+    private IEnumerator DoExplosion(bool success)
     {
         hiddenGrandChildren.gameObject.SetActive(false);
+
+        Transform rotatableGrandChildren = success ? rotatableSuccessExplosion : rotatableFailExplosion;
 
         rotatableGrandChildren.gameObject.SetActive(true);
         Vector3 rotation = transform.eulerAngles;
@@ -124,7 +126,6 @@ public class WallBlock : MonoBehaviour
             wall.Hit();
             player.HitGoal(hitAccuracy);
         }
-        Explode();
     }
 
     private bool IsSuccessfulHit(Player player)

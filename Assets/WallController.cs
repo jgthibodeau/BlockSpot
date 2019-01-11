@@ -123,6 +123,8 @@ public class WallController : MonoBehaviour
         {
             currentWallsHit = 0;
             difficulty.IncreaseDifficulty();
+            //player.GainMistake();
+            player.RefillMistakes();
         }
     }
 
@@ -133,9 +135,9 @@ public class WallController : MonoBehaviour
 
     public void IncreaseCurrentSpeed()
     {
-        boosting = true;
         if (spawnedWall != null)
         {
+            boosting = true;
             spawnedWall.speed = difficulty.Get(difficulty.speed) * speedupScale;
             //spawnedWall.speed *= speedupScale;
         }

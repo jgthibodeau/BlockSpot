@@ -4,7 +4,9 @@ using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class StartOptions : MonoBehaviour {
-	public int sceneToStart = 1;										//Index number in build settings of scene to load if changeScenes is true
+    public static StartOptions instance = null;
+
+    public int sceneToStart = 1;										//Index number in build settings of scene to load if changeScenes is true
 	public bool changeScenes;											//If true, load a new scene when Start is pressed, if false, fade out UI and continue in single scene
 	public bool changeMusicOnStart;										//Choose whether to continue playing menu music or start a new music clip
 
@@ -21,9 +23,19 @@ public class StartOptions : MonoBehaviour {
 
     public GameObject eventSystem;
 
-    void Awake() {
-		//Get a reference to ShowPanels attached to UI object
-		showPanels = GetComponent<ShowPanels> ();
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        //Get a reference to ShowPanels attached to UI object
+        showPanels = GetComponent<ShowPanels> ();
 
 		//Get a reference to PlayMusic attached to UI object
 		playMusic = GetComponent<PlayMusic> ();
@@ -32,8 +44,13 @@ public class StartOptions : MonoBehaviour {
 		pause = GetComponent<Pause> ();
 	}
 
+    public void LoadLevel(int level)
+    {
+        sceneToStart = level;
+        //StartButtonClicked();
+ //   }
 
-	public void StartButtonClicked() {
+	//public void StartButtonClicked() {
 
         eventSystem.SetActive(false);
         //If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic, using length of fadeColorAnimationClip as time. 
@@ -49,6 +66,7 @@ public class StartOptions : MonoBehaviour {
 
 			//Set the trigger of Animator animColorFade to start transition to the FadeToOpaque state.
 			animColorFade.SetTrigger ("fade");
+            Debug.Log("fading");
 		}
 
 		//If changeScenes is false, call StartGameInScene
@@ -87,8 +105,8 @@ public class StartOptions : MonoBehaviour {
 	}
 
 	public void HideDelayed() {
-		//Hide the main menu UI element after fading out menu for start game in scene
-		showPanels.Back ();
+        //Hide the main menu UI element after fading out menu for start game in scene
+        showPanels.Close();
         eventSystem.SetActive(true);
     }
 

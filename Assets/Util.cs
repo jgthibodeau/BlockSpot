@@ -61,21 +61,21 @@ public class Util : MonoBehaviour {
 	}
 
 	public static float GetAxis(string axis){
-		return TeamUtility.IO.InputManager.GetAxis (axis);
+		return Input.GetAxis (axis);
 	}
 	public static bool GetButton(string button){
-		bool pressed = TeamUtility.IO.InputManager.GetButton(button);
+		bool pressed = Input.GetButton(button);
         if (!pressed)
         {
-            pressed = TeamUtility.IO.InputManager.GetAxis(button) != 0;
+            pressed = Input.GetAxis(button) != 0;
         }
         return pressed;
     }
 	public static bool GetButtonDown(string button){
-		return TeamUtility.IO.InputManager.GetButtonDown (button);
+		return Input.GetButtonDown (button);
 	}
 	public static bool GetButtonUp(string button){
-		return TeamUtility.IO.InputManager.GetButtonUp (button);
+		return Input.GetButtonUp (button);
 	}
 
 	public static bool InLayerMask(int layer, LayerMask layermask) {

@@ -229,8 +229,8 @@ public class Player : MonoBehaviour
         Vector3 moveInput = Vector3.ClampMagnitude(new Vector3(Util.GetAxis("Horizontal"), Util.GetAxis("Vertical")), 1);
         if (moveInput.magnitude > 0.01f)
         {
-            gyroVector.x += moveInput.y * moveSensitivity;
-            gyroVector.y += -moveInput.x * moveSensitivity;
+            gyroVector.x = moveInput.y * moveSensitivity;
+            gyroVector.y = -moveInput.x * moveSensitivity;
         }
     }
     
@@ -302,10 +302,13 @@ public class Player : MonoBehaviour
     {
         if (!wallController.boosting)
         {
-            //freezeGyro = true;
-            boostClipDetail.Play(audioSource);
-            boostParticles.Play();
             wallController.IncreaseCurrentSpeed();
+            if (wallController.boosting)
+            {
+                //freezeGyro = true;
+                boostClipDetail.Play(audioSource);
+                boostParticles.Play();
+            }
         }
     }
 
@@ -323,6 +326,7 @@ public class Player : MonoBehaviour
     public bool swiping = false;
     private string touchpad = "Touchpad";
     public float doubleTapTime = 0.5f;
+    public float doubleTapDeadZone = 0.5f;
     private float firstTapTime;
     void SwipeMove()
     {
@@ -371,6 +375,7 @@ public class Player : MonoBehaviour
     public float swipeSensitivity = 5;
     private bool leftSwiping, rightSwiping;
     private float firstLeftTapTime, firstRightTapTime;
+    private float leftTapMovement, rightTapMovement;
     void SwipeRotate()
     {
         ETouchPhase leftTouchPhase = TCKInput.GetTouchPhase(leftTouchPad);
@@ -381,17 +386,20 @@ public class Player : MonoBehaviour
             case ETouchPhase.Moved:
                 if (!leftSwiping)
                 {
-                    if (Time.time - firstLeftTapTime <= doubleTapTime)
+                    if (Time.time - firstLeftTapTime <= doubleTapTime && leftTapMovement <= doubleTapDeadZone)
                     {
                         StartBoost();
                     }
                     else
                     {
+                        leftTapMovement = 0;
                         firstLeftTapTime = Time.time;
                     }
                 }
 
-                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + TCKInput.GetAxis(leftTouchPad).y * swipeSensitivity);
+                Vector2 touchPadInput = TCKInput.GetAxis(leftTouchPad);
+                leftTapMovement += touchPadInput.magnitude;
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + touchPadInput.y * swipeSensitivity);
                 leftSwiping = true;
                 break;
             case ETouchPhase.Ended:
@@ -407,17 +415,20 @@ public class Player : MonoBehaviour
             case ETouchPhase.Moved:
                 if (!rightSwiping)
                 {
-                    if (Time.time - firstRightTapTime <= doubleTapTime)
+                    if (Time.time - firstRightTapTime <= doubleTapTime && rightTapMovement <= doubleTapDeadZone)
                     {
                         StartBoost();
                     }
                     else
                     {
+                        rightTapMovement = 0;
                         firstRightTapTime = Time.time;
                     }
                 }
 
-                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + TCKInput.GetAxis(rightTouchPad).y * swipeSensitivity);
+                Vector2 touchPadInput = TCKInput.GetAxis(rightTouchPad);
+                rightTapMovement += touchPadInput.magnitude;
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + touchPadInput.y * swipeSensitivity);
                 rightSwiping = true;
                 break;
             case ETouchPhase.Ended:
@@ -573,6 +584,27 @@ public class Player : MonoBehaviour
         levelManager.OnPlayerDeath();
     }
 
+    public void LoseMistake()
+    {
+        if (!invincible)
+        {
+            remainingMistakes--;
+        }
+    }
+
+    public void GainMistake()
+    {
+        if (remainingMistakes < maxMistakes)
+        {
+            remainingMistakes++;
+        }
+    }
+
+    public void RefillMistakes()
+    {
+        remainingMistakes = maxMistakes;
+    }
+
     public void HitWall()
     {
         failureClipDetail.Play(audioSource);
@@ -581,10 +613,7 @@ public class Player : MonoBehaviour
         AddAccuracy(0);
         wallsHit++;
 
-        if (!invincible)
-        {
-            remainingMistakes--;
-        }
+        LoseMistake();
 
         if (remainingMistakes > 0)
         {
@@ -601,11 +630,7 @@ public class Player : MonoBehaviour
     {
         AddAccuracy(hitAccuracy);
         goalsHit++;
-
-        if (remainingMistakes < maxMistakes)
-        {
-            remainingMistakes++;
-        }
+        
         successClipDetail.Play(audioSource);
         SwitchShape();
         wallController.HitWall(true, hitAccuracy, this);
