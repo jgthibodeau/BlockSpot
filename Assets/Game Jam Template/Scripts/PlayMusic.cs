@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayMusic : MonoBehaviour {
 
+    public static PlayMusic instance = null;
 
-	public AudioClip titleMusic;					//Assign Audioclip for title music loop
+    public AudioClip titleMusic;					//Assign Audioclip for title music loop
 	public AudioClip mainMusic;						//Assign Audioclip for main 
 
 	[Range(0,1)]
@@ -16,17 +17,23 @@ public class PlayMusic : MonoBehaviour {
 
 	public AudioMixerSnapshot volumeDown;			//Reference to Audio mixer snapshot in which the master volume of main mixer is turned down
 	public AudioMixerSnapshot volumeUp;				//Reference to Audio mixer snapshot in which the master volume of main mixer is turned up
-
-
+    
 	private AudioSource musicSource;				//Reference to the AudioSource which plays music
-	private float resetTime = .01f;					//Very short time used to fade in near instantly without a click
-
-
-	void Awake () 
-	{
-		//Get a component reference to the AudioSource attached to the UI game object
-		musicSource = GetComponent<AudioSource> ();
-		//Call the PlayLevelMusic function to start playing music
+	private float resetTime = .01f;                 //Very short time used to fade in near instantly without a click
+    
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            //Get a component reference to the AudioSource attached to the UI game object
+            musicSource = GetComponent<AudioSource>();
+            //Call the PlayLevelMusic function to start playing music
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
 	}
 
 
@@ -70,10 +77,19 @@ public class PlayMusic : MonoBehaviour {
 		}
 		//Play the selected clip
 		musicSource.Play ();
-	}
+    }
 
-	//Call this function to very quickly fade up the volume of master mixer
-	public void FadeUp(float fadeTime)
+    //Used if running the game in a single scene, takes an integer music source allowing you to choose a clip by number and play.
+    public void PlayMusicClip(AudioClip audioClip)
+    {
+        FastFadeUp();
+        musicSource.volume = mainMusicVolume;
+        musicSource.clip = audioClip;
+        musicSource.Play();
+    }
+
+    //Call this function to very quickly fade up the volume of master mixer
+    public void FadeUp(float fadeTime)
 	{
 		//call the TransitionTo function of the audioMixerSnapshot volumeUp;
 		volumeUp.TransitionTo (fadeTime);
@@ -85,4 +101,9 @@ public class PlayMusic : MonoBehaviour {
 		//call the TransitionTo function of the audioMixerSnapshot volumeDown;
 		volumeDown.TransitionTo (fadeTime);
 	}
+
+    public void FastFadeUp()
+    {
+        FadeUp(0.01f);
+    }
 }

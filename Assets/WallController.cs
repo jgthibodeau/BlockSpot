@@ -28,13 +28,21 @@ public class WallController : MonoBehaviour
 
     public int maxCombo = 10;
     public int currentCombo = 0;
-    public int multiplierPerCombo = 1;
+    public float multiplierPerCombo = 0.2f;//1;
+    public int maxMultiplier = 10;
 
     private MovingWall spawnedWall;
 
     private WallGenerator wallGenerator;
     private MyGameManager myGameManager;
     private Player player;
+
+    public bool createWallOnStart = true;
+
+    public bool emitEvents = false;
+
+    public static string HIT_WALL_FAIL = "HIT_WALL_FAIL";
+    public static string HIT_WALL_SUCCESS = "HIT_WALL_SUCCESS";
 
     void Start()
     {
@@ -45,7 +53,10 @@ public class WallController : MonoBehaviour
         difficulty.SetDifficulty(PlayerPrefs.GetInt(Options.STARTING_LEVEL, 0));
         currentCombo = 0;
 
-        StartCoroutine(InitialWall());
+        if (createWallOnStart)
+        {
+            StartCoroutine(InitialWall());
+        }
     }
 
     public void HitWall(bool success, float hitAccuracy, Player player)
@@ -87,15 +98,33 @@ public class WallController : MonoBehaviour
 
     public int GetCurrentMultiplier()
     {
-        if (currentCombo == 0)
-        {
-            return 1;
-        }
-        return currentCombo * multiplierPerCombo;
+        //if (currentCombo == 0)
+        //{
+        //    return 1;
+        //}
+        int multiplier = 1 + Mathf.FloorToInt(currentCombo * multiplierPerCombo);
+        multiplier = Mathf.Clamp(multiplier, 1, maxMultiplier);
+        return multiplier;
+        //if (multiplier >= 1 && multiplier < maxMultiplier)
+        //{
+        //    return multiplier;
+        //} else if (multiplier >= 1)
+        //{
+        //    return maxMultiplier;
+        //} else
+        //{
+        //    return 1;
+        //}
     }
 
     private void HandleSuccessfulHit(Player player, float hitAccuracy)
     {
+        if (emitEvents)
+        {
+            Debug.Log("emitting " + HIT_WALL_SUCCESS);
+            EventManager.TriggerEvent(HIT_WALL_SUCCESS);
+        }
+
         int newScore = difficulty.GetAsInt(difficulty.pointsPerWall) ;
         //multiply by combo
         if (currentCombo > 0)
@@ -113,9 +142,13 @@ public class WallController : MonoBehaviour
 
         //TODO show scoreObject
 
-        if (currentCombo < maxCombo)
+        if (maxCombo < 0 || currentCombo < maxCombo)
         {
             currentCombo++;
+            if (currentCombo < 0)
+            {
+                currentCombo = int.MaxValue;
+            }
         }
 
         currentWallsHit++;
@@ -130,6 +163,11 @@ public class WallController : MonoBehaviour
 
     private void HandleFailedHit()
     {
+        if (emitEvents)
+        {
+            Debug.Log("emitting " + HIT_WALL_FAIL);
+            EventManager.TriggerEvent(HIT_WALL_FAIL);
+        }
         currentCombo = 0;
     }
 
@@ -152,7 +190,7 @@ public class WallController : MonoBehaviour
         }
     }
 
-    private IEnumerator InitialWall()
+    public IEnumerator InitialWall()
     {
         yield return new WaitForSeconds(initialWallSpawnTime);
         CreateWall();

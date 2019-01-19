@@ -9,6 +9,8 @@ public class Menu : MonoBehaviour {
 
     private GameObject menuItem;
 
+    public bool hideTokenBox;
+
     void Start()
     {
         menuItem = transform.GetChild(0).gameObject;

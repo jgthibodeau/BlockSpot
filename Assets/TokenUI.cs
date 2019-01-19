@@ -11,7 +11,7 @@ public class TokenUI : MonoBehaviour
 
     public TMPro.TMP_Text outOfTokensTextBox;
     [TextArea]
-    public string outOfTokensText = "Watch an ad for 3 game tokens\n\nTime until next free token {0}:{1}";
+    public string outOfTokensText = "Watch an ad for {0} game tokens\n\nTime until next free token {1}:{2}";
 
     public GameObject tokenTextBoxHolder;
     public TMPro.TMP_Text tokenTextBox;
@@ -28,7 +28,7 @@ public class TokenUI : MonoBehaviour
         startOptions = StartOptions.instance;
 
         tokenController.UpdateTokens();
-        currentTokens = tokenController.currentTokens;
+        currentTokens = tokenController.CurrentTokens();
         tokenTextBox.text = string.Format(tokenText, currentTokens);
     }
 
@@ -57,36 +57,46 @@ public class TokenUI : MonoBehaviour
             updateTokens = true;
 
             System.TimeSpan timeUntilNextToken = tokenController.TimeUntilNextFreeToken();
-            outOfTokensTextBox.text = string.Format(outOfTokensText, timeUntilNextToken.Minutes.ToString("00"), timeUntilNextToken.Seconds.ToString("00"));
+            outOfTokensTextBox.text = string.Format(outOfTokensText, tokenController.tokensPerAd, timeUntilNextToken.Minutes.ToString("00"), timeUntilNextToken.Seconds.ToString("00"));
         }
         
-        if (showPanels.InMenu())
+        if (!tokenController.infiniteTokens && showPanels.InMenu() && !showPanels.current.hideTokenBox)
         {
             updateTokens = true;
 
-            if (tokenController.currentTokens != currentTokens)
+            if (tokenController.CurrentTokens() != currentTokens)
             {
-                currentTokens = tokenController.currentTokens;
+                currentTokens = tokenController.CurrentTokens();
                 tokenTextBox.text = string.Format(tokenText, currentTokens);
 
                 bounceText.Trigger();
             }
 
-            if (!tokenTextBoxHolder.activeSelf)
-            {
-                tokenTextBoxHolder.SetActive(true);
-            }
+            ActivateTokenBox();
         } else
         {
-            if (tokenTextBoxHolder.activeSelf)
-            {
-                tokenTextBoxHolder.SetActive(false);
-            }
+            DeactivateTokenBox();
         }
 
         if (updateTokens)
         {
             tokenController.UpdateTokens();
+        }
+    }
+
+    void ActivateTokenBox()
+    {
+        if (!tokenTextBoxHolder.activeSelf)
+        {
+            tokenTextBoxHolder.SetActive(true);
+        }
+    }
+
+    void DeactivateTokenBox()
+    {
+        if (tokenTextBoxHolder.activeSelf)
+        {
+            tokenTextBoxHolder.SetActive(false);
         }
     }
 }

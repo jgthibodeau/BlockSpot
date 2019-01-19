@@ -6,6 +6,7 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
+    private AdController adController;
     private TokenController tokenController;
     private ShowPanels showPanels;
     private StartOptions startOptions;
@@ -18,6 +19,10 @@ public class MenuController : MonoBehaviour
     public Menu startMenu;
     public TMPro.TMP_Text scoreText;
 
+    public static string SHOWN_TUTORIAL = "SHOWN_TUTORIAL";
+    public Menu calibrationMenu;
+    public GameObject normalNewGame, tutorialNewGame;
+
     void Awake()
     {
         if (instance == null)
@@ -26,10 +31,43 @@ public class MenuController : MonoBehaviour
             showPanels = GetComponentInChildren<ShowPanels>();
             startOptions = GetComponentInChildren<StartOptions>();
             tokenController = TokenController.instance;
+            adController = AdController.instance;
+
+            UpdateTutorialButtons();
         }
         else if (instance != this)
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void ShowCalibrationMenu()
+    {
+        showPanels.Show(calibrationMenu);
+    }
+
+    public void HideCalibrationMenu()
+    {
+        showPanels.Close();
+    }
+
+    public void ResetTutorial()
+    {
+        PlayerPrefs.SetInt(SHOWN_TUTORIAL, 0);
+        UpdateTutorialButtons();
+    }
+
+    public void UpdateTutorialButtons()
+    {
+        if (PlayerPrefs.GetInt(SHOWN_TUTORIAL, 0) == 1)
+        {
+            normalNewGame.SetActive(true);
+            tutorialNewGame.SetActive(false);
+        }
+        else
+        {
+            normalNewGame.SetActive(false);
+            tutorialNewGame.SetActive(true);
         }
     }
 
@@ -55,13 +93,12 @@ public class MenuController : MonoBehaviour
         string displayText = "";
         if (p.score > highScore)
         {
-            displayText = string.Format(newHighScorePrefix, currentScoreString);
+            //displayText = string.Format(newHighScorePrefix, currentScoreString);
+            displayText += string.Format(newHighScorePrefix, accuracyString);
             //displayText += prevHighScorePrefix + " " + highScoreString + "\n\n";
             displayText += string.Format(accuracyPrefix, accuracyString);
             PlayerPrefs.SetInt(HIGH_SCORE, p.score);
 
-            //newGameNoAdButton.SetActive(true);
-            //newGameWithAdButton.SetActive(false);
 
             tokenController.AddToken();
         } else
@@ -70,13 +107,36 @@ public class MenuController : MonoBehaviour
             displayText += string.Format(playerScorePrefix, currentScoreString);
             displayText += string.Format(accuracyPrefix, accuracyString);
 
-            //newGameNoAdButton.SetActive(false);
-            //newGameWithAdButton.SetActive(true);
+            newGameNoAdButton.SetActive(false);
+            newGameWithAdButton.SetActive(true);
         }
+
+        adController.AddGameSinceLastAd();
+
         scoreText.text = displayText;
 
         Debug.Log("GAME OVER");
         showPanels.Show(gameOverMenu);
+    }
+
+    public bool showAd = false;
+    void Update()
+    {
+        if (showPanels.current == gameOverMenu)
+        {
+            if (!showAd && adController.EnoughGamesToShowAd())
+            {
+                Debug.Log("showing ad button");
+                showAd = true;
+            }
+            else if (showAd && !adController.EnoughGamesToShowAd())
+            {
+                Debug.Log("hiding ad button");
+                showAd = false;
+            }
+            newGameNoAdButton.SetActive(!showAd);
+            newGameWithAdButton.SetActive(showAd);
+        }
     }
     
     //public void Restart()

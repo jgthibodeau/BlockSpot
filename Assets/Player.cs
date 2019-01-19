@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     public bool invertRotation = false;
     public bool invertGyroX = false;
     public bool invertGyroY = false;
+    private Gyroscope gyro;
 
     public bool doubleClickFreeze, doubleClickReset;
     private bool freezeGyro;
@@ -110,9 +111,12 @@ public class Player : MonoBehaviour
         screenShake = ScreenShake.instance;
         audioSource = GetComponent<AudioSource>();
 
+        Debug.Log("Setting up gyro... " + SystemInfo.supportsGyroscope);
         Util.ResetGyro();
         ResetGyro();
+        gyro = Input.gyro;
         UpdateGyroSensitivity();
+        Debug.Log("Gyro set");
 
         InitializeShapes();
 
@@ -150,6 +154,8 @@ public class Player : MonoBehaviour
         gyroCalibration.z = PlayerPrefs.GetFloat(Options.GYRO_CALIBRATION + 'z');
 
         swipeSensitivity = PlayerPrefs.GetFloat(Options.ROTATE_SENSITIVITY);
+        //swipeSensitivity = 25;
+        //rotationSlowdownDeadzone = PlayerPrefs.GetFloat(Options.ROTATE_SENSITIVITY);
 
         if (invertRotation)
         {
@@ -376,6 +382,10 @@ public class Player : MonoBehaviour
     private bool leftSwiping, rightSwiping;
     private float firstLeftTapTime, firstRightTapTime;
     private float leftTapMovement, rightTapMovement;
+    public float currentRotateLeftSpeed, currentRotateRightSpeed;
+    public float rotateDrag = 0.5f;
+    public float rotationSlowdownMinSpeedDeadzone = 0.1f;
+    public float rotationSlowdownDeadzone = 15f;
     void SwipeRotate()
     {
         ETouchPhase leftTouchPhase = TCKInput.GetTouchPhase(leftTouchPad);
@@ -399,7 +409,8 @@ public class Player : MonoBehaviour
 
                 Vector2 touchPadInput = TCKInput.GetAxis(leftTouchPad);
                 leftTapMovement += touchPadInput.magnitude;
-                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + touchPadInput.y * swipeSensitivity);
+                currentRotateLeftSpeed = touchPadInput.y * swipeSensitivity;
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + currentRotateLeftSpeed);
                 leftSwiping = true;
                 break;
             case ETouchPhase.Ended:
@@ -428,7 +439,8 @@ public class Player : MonoBehaviour
 
                 Vector2 touchPadInput = TCKInput.GetAxis(rightTouchPad);
                 rightTapMovement += touchPadInput.magnitude;
-                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + touchPadInput.y * swipeSensitivity);
+                currentRotateRightSpeed = touchPadInput.y * swipeSensitivity;
+                blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + currentRotateRightSpeed);
                 rightSwiping = true;
                 break;
             case ETouchPhase.Ended:
@@ -445,7 +457,107 @@ public class Player : MonoBehaviour
 
     void HandleSwipeEnd()
     {
+        //if (Mathf.Approximately(currentRotateLeftSpeed, 0) && Mathf.Approximately(currentRotateRightSpeed, 0))
+        //{
+        //    blockController.LockInAngle();
+        //} else
+        //{
+        //    currentRotateLeftSpeed = SlowDownRotation(currentRotateLeftSpeed);
+        //    currentRotateRightSpeed = SlowDownRotation(currentRotateRightSpeed);
+        //    blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + currentRotateLeftSpeed + currentRotateRightSpeed);
+        //}
+
+
+        //float currentRotateSpeed = currentRotateLeftSpeed + currentRotateRightSpeed;
+        //float additionalAngle = 2 * currentRotateSpeed * currentRotateSpeed / (rotateDrag * 2);
+        //blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + additionalAngle);
+        //blockController.LockInAngle();
+        //currentRotateLeftSpeed = 0;
+        //currentRotateRightSpeed = 0;
+
+
+        float currentRotateSpeed = currentRotateLeftSpeed + currentRotateRightSpeed;
+        if (currentRotateSpeed > rotationSlowdownMinSpeedDeadzone)
+        {
+            if (blockController.GetDesiredAngleRaw() > rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() < 90)
+            {
+                blockController.SetDesiredAngle(90);
+            } else if (blockController.GetDesiredAngleRaw() > 90 + rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() < 180)
+            {
+                blockController.SetDesiredAngle(180);
+            } else if (blockController.GetDesiredAngleRaw() > 180 + rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() < 270)
+            {
+                blockController.SetDesiredAngle(270);
+            } else if (blockController.GetDesiredAngleRaw() > 270 + rotationSlowdownDeadzone)
+            {
+                blockController.SetDesiredAngle(0);
+            }
+        }
+        if (currentRotateSpeed < -rotationSlowdownMinSpeedDeadzone)
+        {
+            if (blockController.GetDesiredAngleRaw() < 360 - rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() > 270)
+            {
+                blockController.SetDesiredAngle(270);
+            }
+            else if (blockController.GetDesiredAngleRaw() < 270 - rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() > 180)
+            {
+                blockController.SetDesiredAngle(180);
+            }
+            else if (blockController.GetDesiredAngleRaw() < 180 - rotationSlowdownDeadzone && blockController.GetDesiredAngleRaw() > 90)
+            {
+                blockController.SetDesiredAngle(90);
+            }
+            else if (blockController.GetDesiredAngleRaw() < 90 - rotationSlowdownDeadzone)
+            {
+                blockController.SetDesiredAngle(0);
+            }
+        }
+        currentRotateLeftSpeed = 0;
+        currentRotateRightSpeed = 0;
         blockController.LockInAngle();
+
+
+        //if (slowDownRoutine == null)
+        //{
+        //    slowDownRoutine = StartCoroutine(SlowDown());
+        //}
+    }
+    Coroutine slowDownRoutine;
+    private IEnumerator SlowDown()
+    {
+        float currentRotateSpeed = currentRotateLeftSpeed + currentRotateRightSpeed;
+        float rotateTime = currentRotateSpeed / rotateDrag;
+        while (rotateTime > 0)
+        {
+            if (leftSwiping || rightSwiping)
+            {
+                yield break;
+            }
+
+            currentRotateLeftSpeed = SlowDownRotation(currentRotateLeftSpeed);
+            currentRotateRightSpeed = SlowDownRotation(currentRotateRightSpeed);
+            currentRotateSpeed = currentRotateLeftSpeed + currentRotateRightSpeed;
+
+            rotateTime -= Time.deltaTime;
+            blockController.SetDesiredAngle(blockController.GetDesiredAngleRaw() + currentRotateSpeed);
+            yield return null;
+        }
+        blockController.LockInAngle();
+        currentRotateLeftSpeed = 0;
+        currentRotateRightSpeed = 0;
+        slowDownRoutine = null;
+    }
+
+    float SlowDownRotation(float rotation)
+    {
+        if (rotation > 0)
+        {
+            rotation = Mathf.Clamp(rotation - rotateDrag * Time.deltaTime, 0, rotation);
+        } else if (rotation < 0)
+        {
+            rotation = Mathf.Clamp(rotation + rotateDrag * Time.deltaTime, rotation, 0);
+        }
+        return rotation;
     }
 
     public float swipeDistance;
@@ -505,7 +617,7 @@ public class Player : MonoBehaviour
         bool updateGyro = !doubleClickFreeze || !(TCKInput.GetAction("Left", EActionEvent.Press) && TCKInput.GetAction("Right", EActionEvent.Press));
         if (!freezeGyro && updateGyro)
         {
-            Vector3 gyroInput = Input.gyro.rotationRateUnbiased + gyroCalibration;
+            Vector3 gyroInput = gyro.rotationRateUnbiased + gyroCalibration;
 
             //Vector3 gyroInput = Input.gyro.rotationRate;
             //Vector3 gyroInput = Input.acceleration;
@@ -586,7 +698,7 @@ public class Player : MonoBehaviour
 
     public void LoseMistake()
     {
-        if (!invincible)
+        if (remainingMistakes > 0)
         {
             remainingMistakes--;
         }
@@ -615,7 +727,7 @@ public class Player : MonoBehaviour
 
         LoseMistake();
 
-        if (remainingMistakes > 0)
+        if (remainingMistakes > 0 || invincible)
         {
             wallController.HitWall(false, 0, this);
             StopBoost();

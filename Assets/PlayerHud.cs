@@ -80,7 +80,7 @@ public class PlayerHud : MonoBehaviour
     void UpdateCombo()
     {
         currentCombo = wallController.currentCombo;
-        multiplierText.SetText(multiplierPrefix + currentCombo);
+        multiplierText.SetText(multiplierPrefix + Util.FormatNumber(currentCombo));
     }
 
     void UpdateLevel()

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Horde Level.unity
     guid: f88465e516f972b418714a4181d4269a
+  - enabled: 1
+    path: Assets/Tutorial.unity
+    guid: 1ad1f7b294fc982419d8d4367baef772
   m_configObjects: {}

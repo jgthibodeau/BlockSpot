@@ -47,8 +47,14 @@ public class ShowPanels : MonoBehaviour {
 
     public void Close()
     {
-        current.previous = null;
-        current.Hide();
-        current = null;
+        if (current != null)
+        {
+            if (current.previous != null)
+            {
+                current.previous = null;
+            }
+            current.Hide();
+            current = null;
+        }
     }
 }

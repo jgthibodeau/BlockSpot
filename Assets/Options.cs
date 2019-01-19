@@ -7,8 +7,10 @@ using TMPro;
 
 public class Options : MonoBehaviour
 {
-    public Slider sfxSlider, musicSlider, rotateSensitivitySlider, gyroSlider;
-    public Toggle showButtonToggle, invertToggle, invertGyroXToggle, invertGyroYToggle, muteToggle;
+    public Slider[] rotateSensitivitySliders, gyroSliders;
+    public Toggle[] invertToggles, invertGyroXToggles, invertGyroYToggles;
+    public Slider sfxSlider, musicSlider;
+    public Toggle /*showButtonToggle,*/ muteToggle;
     public TMPro.TMP_Text startingLevelText;
 
     public int minStartingLevel = 0, maxStartingLevel = 9;
@@ -69,17 +71,43 @@ public class Options : MonoBehaviour
     {
         Debug.Log("Loading settings");
 
-        sfxSlider.value = PlayerPrefs.GetFloat(SFX_VOL, defaultSfxVolume);
-        musicSlider.value = PlayerPrefs.GetFloat(MUSIC_VOL, defaultMusicVolume);
-        gyroSlider.value = PlayerPrefs.GetFloat(GYRO_SENSITIVITY, defaultGyroSensitivity);
-        rotateSensitivitySlider.value = PlayerPrefs.GetFloat(ROTATE_SENSITIVITY, defaultRotateSensitivity);
-        showButtonToggle.isOn = PlayerPrefs.GetInt(SHOW_BUTTONS, defaultShowButtons) == 1;
-        invertToggle.isOn = PlayerPrefs.GetInt(INVERT_ROTATION, defaultInvertRotation) == 1;
-        invertGyroXToggle.isOn = PlayerPrefs.GetInt(INVERT_GYRO_X, defaultInvertGyroX) == 1;
-        invertGyroYToggle.isOn = PlayerPrefs.GetInt(INVERT_GYRO_Y, defaultInvertGyroY) == 1;
-        muteToggle.isOn = PlayerPrefs.GetInt(MUTE, defaultMute) == 1;
-        SetMute(muteToggle.isOn);
-        startingLevelText.text = "" + (PlayerPrefs.GetInt(STARTING_LEVEL, defaultMute) + 1);
+        float sfxVol = PlayerPrefs.GetFloat(SFX_VOL, defaultSfxVolume);
+        PlayerPrefs.SetFloat(SFX_VOL, sfxVol);
+        sfxSlider.value = sfxVol;
+
+        float musicVol = PlayerPrefs.GetFloat(MUSIC_VOL, defaultMusicVolume);
+        PlayerPrefs.SetFloat(MUSIC_VOL, musicVol);
+        musicSlider.value = musicVol;
+
+        float gyroSensitivity = PlayerPrefs.GetFloat(GYRO_SENSITIVITY, defaultGyroSensitivity);
+        PlayerPrefs.SetFloat(GYRO_SENSITIVITY, gyroSensitivity);
+        UpdateSliders(gyroSliders, gyroSensitivity);
+
+        float rotateSensitivity = PlayerPrefs.GetFloat(ROTATE_SENSITIVITY, defaultRotateSensitivity);
+        PlayerPrefs.SetFloat(ROTATE_SENSITIVITY, rotateSensitivity);
+        UpdateSliders(rotateSensitivitySliders, rotateSensitivity);
+
+        //showButtonToggle.isOn = PlayerPrefs.GetInt(SHOW_BUTTONS, defaultShowButtons) == 1;
+        int invertRotation = PlayerPrefs.GetInt(INVERT_ROTATION, defaultInvertRotation);
+        PlayerPrefs.SetInt(INVERT_ROTATION, invertRotation);
+        UpdateToggles(invertToggles, invertRotation == 1);
+
+        int invertGyroX = PlayerPrefs.GetInt(INVERT_GYRO_X, defaultInvertGyroX);
+        PlayerPrefs.SetInt(INVERT_GYRO_X, invertGyroX);
+        UpdateToggles(invertGyroXToggles, invertGyroX == 1);
+
+        int invertGyroY = PlayerPrefs.GetInt(INVERT_GYRO_Y, defaultInvertGyroY);
+        PlayerPrefs.SetInt(INVERT_GYRO_Y, invertGyroY);
+        UpdateToggles(invertGyroYToggles, invertGyroY == 1);
+
+        int mute = PlayerPrefs.GetInt(MUTE, defaultMute);
+        PlayerPrefs.SetInt(MUTE, mute);
+        muteToggle.isOn = mute == 1;
+        SetMute(mute == 1);
+
+        int startingLevel = PlayerPrefs.GetInt(STARTING_LEVEL, defaultStartingLevel);
+        PlayerPrefs.SetInt(STARTING_LEVEL, startingLevel);
+        startingLevelText.text = "" + (startingLevel + 1);
 
         settingsLoaded = true;
     }
@@ -100,6 +128,23 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt(LOADED, 1);
         SaveSettings();
     }
+    
+    void UpdateSliders(Slider[] sliders, float value)
+    {
+        foreach (Slider s in sliders)
+        {
+            s.value = value;
+        }
+    }
+    
+    void UpdateToggles(Toggle[] toggles, bool isOn)
+    {
+        foreach (Toggle t in toggles)
+        {
+            t.isOn = isOn;
+        }
+    }
+
 
     public static void SaveSettings() {
         PlayerPrefs.Save();
@@ -130,12 +175,14 @@ public class Options : MonoBehaviour
     {
         PlayerPrefs.SetFloat(GYRO_SENSITIVITY, sensitivity);
         SaveSettings();
+        UpdateSliders(gyroSliders, sensitivity);
     }
 
     public void SetRotateSensitivity(float sensitivity)
     {
         PlayerPrefs.SetFloat(ROTATE_SENSITIVITY, sensitivity);
         SaveSettings();
+        UpdateSliders(rotateSensitivitySliders, sensitivity);
     }
 
     public void SetShowButtons(bool showButtons)
@@ -150,6 +197,7 @@ public class Options : MonoBehaviour
         int val = invert ? 1 : 0;
         PlayerPrefs.SetInt(INVERT_ROTATION, val);
         SaveSettings();
+        UpdateToggles(invertToggles, invert);
     }
 
     public void SetInvertGyroX(bool invert)
@@ -157,6 +205,7 @@ public class Options : MonoBehaviour
         int val = invert ? 1 : 0;
         PlayerPrefs.SetInt(INVERT_GYRO_X, val);
         SaveSettings();
+        UpdateToggles(invertGyroXToggles, invert);
     }
 
     public void SetInvertGyroY(bool invert)
@@ -164,6 +213,7 @@ public class Options : MonoBehaviour
         int val = invert ? 1 : 0;
         PlayerPrefs.SetInt(INVERT_GYRO_Y, val);
         SaveSettings();
+        UpdateToggles(invertGyroYToggles, invert);
     }
 
     public void SetMute(bool mute)

@@ -11,7 +11,11 @@ public class AdController : MonoBehaviour
     private TokenController tokenController;
 
     private Menu afterAdMenu;
-    
+
+    public int gamesPerAd = 5;
+    public int gamesSinceLastAd;
+    public static string GAMES_PLAYED_SINCE_LAST_AD = "GAMES_PLAYED_SINCE_LAST_AD";
+
     void Awake()
     {
         if (instance == null)
@@ -19,6 +23,7 @@ public class AdController : MonoBehaviour
             instance = this;
             tokenController = TokenController.instance;
             showPanels = GetComponentInChildren<ShowPanels>();
+            gamesSinceLastAd = PlayerPrefs.GetInt(GAMES_PLAYED_SINCE_LAST_AD, 0);
         }
         else if (instance != this)
         {
@@ -26,11 +31,27 @@ public class AdController : MonoBehaviour
         }
     }
 
+    public void AddGameSinceLastAd()
+    {
+        gamesSinceLastAd++;
+        PlayerPrefs.SetInt(GAMES_PLAYED_SINCE_LAST_AD, gamesSinceLastAd);
+    }
+
+    public void ResetGamesSinceLastAd()
+    {
+        gamesSinceLastAd = 0;
+        PlayerPrefs.SetInt(GAMES_PLAYED_SINCE_LAST_AD, gamesSinceLastAd);
+    }
+
+    public bool EnoughGamesToShowAd()
+    {
+        return gamesSinceLastAd >= gamesPerAd;
+    }
+
     public void ShowRewardedAdBack()
     {
         if (Advertisement.IsReady("rewardedVideo"))
         {
-            this.afterAdMenu = afterAdMenu;
             var options = new ShowOptions { resultCallback = HandleShowResult };
             Advertisement.Show("rewardedVideo", options);
         }
@@ -67,6 +88,7 @@ public class AdController : MonoBehaviour
 
     private void OnSuccess()
     {
+        ResetGamesSinceLastAd();
         tokenController.AddAdTokens();
         NextMenu();
     }
@@ -78,6 +100,7 @@ public class AdController : MonoBehaviour
 
     private void OnFail()
     {
+        ResetGamesSinceLastAd();
         tokenController.AddAdTokens();
         NextMenu();
     }
